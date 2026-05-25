@@ -24,42 +24,60 @@ export default function ConversationPage() {
   const recognitionRef = useRef(null)
   const audioRef = useRef(null)   // 현재 재생 중인 Audio 객체
 
-  // ── TTS: OpenAI nova 음성 (자연스러운 인토네이션) ──
+  // ── TTS: Microsoft Edge Neural TTS (서버) + AudioContext (Chrome 자동재생 우회) ──
   const speak = async (text, idx) => {
     // 같은 메시지 누르면 정지
     if (speakingIdx === idx) {
-      audioRef.current?.pause()
-      audioRef.current = null
+      if (audioRef.current) {
+        try { audioRef.current.stop() } catch {}
+        try { audioRef.current.pause() } catch {}
+        audioRef.current = null
+      }
       window.speechSynthesis.cancel()
       setSpeakingIdx(null)
       return
     }
     // 다른 메시지 재생 중이면 먼저 정지
-    audioRef.current?.pause()
-    audioRef.current = null
+    if (audioRef.current) {
+      try { audioRef.current.stop() } catch {}
+      try { audioRef.current.pause() } catch {}
+      audioRef.current = null
+    }
     window.speechSynthesis.cancel()
     setSpeakingIdx(idx)
 
     try {
-      // OpenAI TTS (서버 경유)
       const res = await fetch('/api/tts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text }),
       })
-      // 오류 응답(JSON)을 오디오로 재생하는 사고 방지
       const contentType = res.headers.get('content-type') || ''
       if (!res.ok || !contentType.includes('audio')) throw new Error('TTS 서버 오류')
 
-      const blob = await res.blob()
-      const url  = URL.createObjectURL(blob)
-      const audio = new Audio(url)
-      audioRef.current = audio
-      audio.onended = () => { setSpeakingIdx(null); URL.revokeObjectURL(url) }
-      audio.onerror = () => { setSpeakingIdx(null); URL.revokeObjectURL(url) }
-      audio.play()
+      const arrayBuffer = await res.arrayBuffer()
+
+      // AudioContext 사용 — Chrome 자동재생 정책 우회
+      const AudioCtx = window.AudioContext || window.webkitAudioContext
+      const ctx = new AudioCtx()
+      if (ctx.state === 'suspended') await ctx.resume()
+
+      const decoded = await ctx.decodeAudioData(arrayBuffer)
+      const source  = ctx.createBufferSource()
+      source.buffer = decoded
+      source.connect(ctx.destination)
+      source.onended = () => {
+        setSpeakingIdx(null)
+        ctx.close()
+      }
+      source.start(0)
+      // pause() 호환용 래퍼
+      audioRef.current = {
+        stop:  () => { try { source.stop() } catch {} ctx.close() },
+        pause: () => { try { source.stop() } catch {} ctx.close() },
+      }
     } catch {
-      // OpenAI 키 없거나 실패 → 브라우저 TTS 폴백
+      // 서버 TTS 실패 → 브라우저 Web Speech API 폴백
       const utter = new SpeechSynthesisUtterance(text)
       utter.lang = 'en-US'
       utter.rate = 0.88
@@ -68,7 +86,7 @@ export default function ConversationPage() {
         || voices.find(v => v.lang.startsWith('en') && v.localService)
         || voices.find(v => v.lang.startsWith('en'))
       if (best) utter.voice = best
-      utter.onend = () => setSpeakingIdx(null)
+      utter.onend  = () => setSpeakingIdx(null)
       utter.onerror = () => setSpeakingIdx(null)
       if (voices.length > 0) {
         window.speechSynthesis.speak(utter)
