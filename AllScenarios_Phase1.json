@@ -1,0 +1,3508 @@
+{
+  "scenarios": [
+    {
+      "id": "P1-GREET-001",
+      "title_ko": "호텔 로비에서 직원에게 인사하기",
+      "context_ko": "처음 방문한 호텔 로비에서 프런트 직원이 먼저 인사를 건넨다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Hotel Front Desk Staff",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s-30s",
+        "register": "polite-friendly"
+      },
+      "voice_hint": "warm and welcoming",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good morning! Welcome to Sunrise Hotel. How can I help you today?",
+          "ko": "좋은 아침이에요! 선라이즈 호텔에 오신 걸 환영합니다. 무엇을 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. I have reservation.",
+          "ko": "안녕하세요. 예약이 있어요.",
+          "alt_en": [
+            "Hi, I made a reservation.",
+            "Hello, I have a booking."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course! Yes, you have a reservation. Let me check that for you. May I have your name, please?",
+          "ko": "물론이죠! 예약을 확인해 드릴게요. 성함이 어떻게 되세요?",
+          "recast_target": "I have reservation",
+          "recast_note": "자연스럽게 'a reservation'으로 재구성하여 관사 사용 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "My name is Kim Minjun.",
+          "ko": "제 이름은 김민준이에요.",
+          "alt_en": [
+            "I'm Kim Minjun.",
+            "Kim Minjun, please."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Thank you, Mr. Kim. I found your reservation. You have a room for two nights. Here is your key card. Enjoy your stay!",
+          "ko": "감사합니다, 김 고객님. 예약을 찾았어요. 2박 예약이시네요. 키카드 여기 있습니다. 즐거운 숙박 되세요!",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Thank you very much!",
+          "ko": "정말 감사합니다!",
+          "alt_en": [
+            "Thank you so much!",
+            "Thanks a lot!"
+          ]
+        }
+      ],
+      "key_expressions": [
+        "I have a reservation.",
+        "May I have your name?",
+        "Here is your key card."
+      ],
+      "common_mistakes_ko": [
+        "'reservation' 앞에 관사 'a'를 빠뜨리는 경우가 많습니다.",
+        "'Thank you very much'는 격식체, 'Thanks a lot'은 비격식체입니다."
+      ],
+      "cultural_note_ko": "미국·유럽 호텔에서는 직원이 먼저 밝게 인사하는 것이 일반적입니다. 눈을 맞추고 미소로 응답하는 것이 예의입니다."
+    },
+    {
+      "id": "P1-GREET-002",
+      "title_ko": "공항 안내 데스크에서 정보 묻기",
+      "context_ko": "국제공항 도착 후 안내 데스크에서 게이트 위치를 묻는다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Airport Information Staff",
+      "learner_role": "Traveler",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s-40s",
+        "register": "professional"
+      },
+      "voice_hint": "clear and helpful",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! Welcome to JFK Airport. Can I help you?",
+          "ko": "안녕하세요! JFK 공항에 오신 걸 환영합니다. 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, please. Where is gate B12?",
+          "ko": "네, 부탁드려요. B12 게이트가 어디에 있나요?",
+          "alt_en": [
+            "Excuse me, how do I get to gate B12?",
+            "Can you tell me where gate B12 is?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Gate B12 is in Terminal B. Go straight, then turn left at the escalator. It takes about five minutes.",
+          "ko": "B12 게이트는 B 터미널에 있어요. 직진하신 후 에스컬레이터에서 왼쪽으로 도세요. 약 5분 걸립니다.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Turn left at escalator? Okay. Thank you!",
+          "ko": "에스컬레이터에서 왼쪽이요? 알겠어요. 감사합니다!",
+          "alt_en": [
+            "So I turn left at the escalator, right?",
+            "Left at the escalator — got it, thank you!"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "That's right! Also, your boarding time is in 30 minutes. Have a safe flight!",
+          "ko": "맞아요! 그리고 탑승 시간이 30분 후예요. 안전한 비행 되세요!",
+          "recast_target": "Turn left at escalator",
+          "recast_note": "확인 질문에 자연스럽게 'at the escalator'로 관사 추가 모델링"
+        }
+      ],
+      "key_expressions": [
+        "Where is gate B12?",
+        "Go straight, then turn left.",
+        "It takes about five minutes."
+      ],
+      "common_mistakes_ko": [
+        "장소 앞 관사(the escalator)를 빠뜨리는 경우가 많습니다.",
+        "'How do I get to ~?'는 길 찾을 때 매우 자연스러운 표현입니다."
+      ],
+      "cultural_note_ko": "공항 직원에게 길을 물을 때는 'Excuse me'로 시작하면 더 공손하게 들립니다."
+    },
+    {
+      "id": "P1-GREET-003",
+      "title_ko": "회사 리셉션에서 방문객 인사",
+      "context_ko": "비즈니스 미팅을 위해 회사를 방문해 리셉션 직원과 인사한다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Receptionist",
+      "learner_role": "Business Visitor",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s",
+        "register": "professional"
+      },
+      "voice_hint": "polite and efficient",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good afternoon! How can I help you?",
+          "ko": "안녕하세요! 무엇을 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I come to meet Mr. Johnson. I have appointment.",
+          "ko": "저는 존슨 씨를 만나러 왔어요. 약속이 있어요.",
+          "alt_en": [
+            "I'm here to meet Mr. Johnson. I have an appointment.",
+            "I have an appointment with Mr. Johnson."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I see. You have an appointment with Mr. Johnson. May I have your name and company name, please?",
+          "ko": "알겠습니다. 존슨 씨와 약속이 있으시군요. 성함과 회사명을 알려주실 수 있을까요?",
+          "recast_target": "I come to meet / I have appointment",
+          "recast_note": "'I'm here to meet'과 'an appointment'으로 자연스럽게 재구성"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I am Park Jisoo from Korea Tech Company.",
+          "ko": "저는 코리아 테크 컴퍼니의 박지수입니다.",
+          "alt_en": [
+            "My name is Park Jisoo, from Korea Tech.",
+            "Park Jisoo, Korea Tech Company."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Thank you, Ms. Park. Let me call Mr. Johnson for you. Please have a seat.",
+          "ko": "감사합니다, 박 고객님. 존슨 씨에게 연락해 드릴게요. 잠시 앉아서 기다려 주세요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "I wait here?",
+          "ko": "여기서 기다리면 되나요?",
+          "alt_en": [
+            "Should I wait here?",
+            "Okay, I'll wait here."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes, please wait here. Mr. Johnson will come in a few minutes. Can I get you some water or coffee?",
+          "ko": "네, 여기서 기다려 주세요. 존슨 씨가 곧 오실 거예요. 물이나 커피 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'm here to meet ~.",
+        "I have an appointment.",
+        "Please have a seat."
+      ],
+      "common_mistakes_ko": [
+        "'I come'은 현재 진행형이 더 자연스럽습니다: 'I'm here to meet'.",
+        "약속은 'appointment', 만남 약속은 'meeting' 둘 다 쓸 수 있습니다."
+      ],
+      "cultural_note_ko": "영미권 회사에서는 방문 시 반드시 리셉션에 먼저 신원을 알려야 합니다. 예약 없이 직접 사무실로 가는 것은 실례입니다."
+    },
+    {
+      "id": "P1-GREET-004",
+      "title_ko": "이웃과 처음 인사 나누기",
+      "context_ko": "새로 이사 온 아파트에서 이웃을 처음 만나 인사한다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Neighbor",
+      "learner_role": "New Resident",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "40s",
+        "register": "casual-friendly"
+      },
+      "voice_hint": "friendly and relaxed",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Oh hi! Are you the new neighbor? I'm Tom from apartment 302.",
+          "ko": "안녕하세요! 새로 이사 오신 분이세요? 저는 302호 톰이에요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, hello. I move here last week. My name is Sujin.",
+          "ko": "네, 안녕하세요. 지난주에 이사왔어요. 저는 수진이에요.",
+          "alt_en": [
+            "Yes! I moved in last week. I'm Sujin.",
+            "Hi, I'm Sujin. I just moved in."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Nice to meet you, Sujin! I moved here last year. It's a great building. Do you like it so far?",
+          "ko": "만나서 반가워요, 수진 씨! 저는 작년에 이사왔어요. 좋은 건물이에요. 지금까지 마음에 드세요?",
+          "recast_target": "I move here last week",
+          "recast_note": "'I moved here last week'으로 과거시제 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Yes, I like. But parking is hard to find.",
+          "ko": "네, 좋아요. 그런데 주차하기가 어렵더라고요.",
+          "alt_en": [
+            "I like it, but parking is difficult.",
+            "Yes, but I can't find parking easily."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Oh, parking is tough here. There's a public parking lot two blocks away — that might help. Anyway, welcome to the building!",
+          "ko": "맞아요, 여기 주차가 어렵죠. 두 블록 떨어진 곳에 공영 주차장이 있어요. 도움이 될 거예요. 아무튼 잘 오셨어요!",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Thank you for information. Nice to meet you, Tom!",
+          "ko": "정보 감사해요. 만나서 반가워요, 톰!",
+          "alt_en": [
+            "Thanks for the tip! Nice to meet you!",
+            "Thank you! It was nice meeting you."
+          ]
+        }
+      ],
+      "key_expressions": [
+        "Nice to meet you.",
+        "I moved here last week.",
+        "It's a great building."
+      ],
+      "common_mistakes_ko": [
+        "'I move'가 아닌 'I moved' — 완료된 과거는 과거시제를 씁니다.",
+        "'Thank you for the information'에서 'the'를 빠뜨리지 않도록 주의하세요."
+      ],
+      "cultural_note_ko": "영미권에서는 새로 이사 온 이웃이 먼저 인사하는 것이 일반적입니다. 간단한 선물(와인, 쿠키 등)을 가져가는 문화도 있습니다."
+    },
+    {
+      "id": "P1-GREET-005",
+      "title_ko": "상점에서 점원과 인사",
+      "context_ko": "편의점에 들어서자 점원이 인사를 건넨다. 간단한 물건을 산다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Store Clerk",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "20s",
+        "register": "casual"
+      },
+      "voice_hint": "upbeat and casual",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hey there! Welcome. Let me know if you need help finding anything.",
+          "ko": "안녕하세요! 어서 오세요. 필요한 거 찾으시면 말씀해 주세요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. Do you have water bottle?",
+          "ko": "안녕하세요. 생수 있나요?",
+          "alt_en": [
+            "Hi, do you have any water bottles?",
+            "Excuse me, where are the water bottles?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Yes, we have water bottles in aisle three, on the left side. We have small ones and big ones.",
+          "ko": "네, 3번 통로 왼쪽에 생수가 있어요. 작은 것과 큰 것 둘 다 있어요.",
+          "recast_target": "water bottle",
+          "recast_note": "'water bottles'로 복수형 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Okay. Also, where is chips?",
+          "ko": "알겠어요. 그리고 과자는 어디에 있나요?",
+          "alt_en": [
+            "Also, where can I find chips?",
+            "And where are the chips?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Chips are right here in aisle two, near the register.",
+          "ko": "과자는 바로 여기 2번 통로, 계산대 근처에 있어요.",
+          "recast_target": "where is chips",
+          "recast_note": "'where are the chips'로 복수 동사 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Oh, I see it. Thank you!",
+          "ko": "아, 보이네요. 감사합니다!",
+          "alt_en": [
+            "Got it, thanks!",
+            "I see them, thank you!"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Sure! Let me know if there's anything else. Have a great day!",
+          "ko": "물론이죠! 다른 필요한 게 있으면 말씀해 주세요. 좋은 하루 되세요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Do you have any ~?",
+        "It's in aisle ~.",
+        "Let me know if you need help."
+      ],
+      "common_mistakes_ko": [
+        "'where is chips'가 아닌 'where are the chips' — chips는 복수명사입니다.",
+        "'Do you have water bottle?'보다 'Do you have any water bottles?'가 더 자연스럽습니다."
+      ],
+      "cultural_note_ko": "미국 편의점에서는 직원이 먼저 인사하는 경우가 많습니다. 짧게 'Hey' 또는 'Hi'로 응답해도 충분합니다."
+    },
+    {
+      "id": "P1-ORDER-001",
+      "title_ko": "카페에서 음료 주문하기",
+      "context_ko": "스타벅스 스타일 카페에서 음료를 주문한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Barista",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s",
+        "register": "friendly"
+      },
+      "voice_hint": "cheerful and fast-paced",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hi there! What can I get for you today?",
+          "ko": "안녕하세요! 오늘 무엇을 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I want one latte, please.",
+          "ko": "라떼 하나 주세요.",
+          "alt_en": [
+            "Can I have a latte, please?",
+            "One latte, please."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Sure! What size would you like — small, medium, or large?",
+          "ko": "물론이죠! 사이즈는 어떻게 해드릴까요? 스몰, 미디엄, 라지 중에서요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Medium, please. And can I have soy milk?",
+          "ko": "미디엄으로 주세요. 그리고 두유로 해주실 수 있나요?",
+          "alt_en": [
+            "Medium, please. With soy milk if possible.",
+            "Medium size, and can I get soy milk instead?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Of course! One medium soy latte. Can I get a name for the order?",
+          "ko": "물론이죠! 미디엄 두유 라떼 하나요. 주문자 이름을 알려주시겠어요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "My name is Sora.",
+          "ko": "제 이름은 소라예요.",
+          "alt_en": [
+            "Sora, please.",
+            "It's Sora."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Great! That'll be four dollars fifty. Your drink will be ready in a moment, Sora!",
+          "ko": "좋아요! 4달러 50센트입니다. 음료는 잠시 후 준비될 거예요, 소라 씨!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Can I have a ~, please?",
+        "What size would you like?",
+        "Can I get a name for the order?"
+      ],
+      "common_mistakes_ko": [
+        "사이즈를 말할 때 'I want medium'보다 'Medium, please'가 더 자연스럽습니다.",
+        "우유 종류를 바꿀 때 'Can I have soy milk?' 또는 'With soy milk, please.'라고 합니다."
+      ],
+      "cultural_note_ko": "미국 카페에서는 주문 시 이름을 묻는 것이 일반적입니다. 알아듣기 쉬운 영어 이름을 미리 정해두면 편합니다."
+    },
+    {
+      "id": "P1-ORDER-002",
+      "title_ko": "레스토랑에서 저녁 식사 주문",
+      "context_ko": "미국식 레스토랑에서 웨이터에게 저녁 메뉴를 주문한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Waiter",
+      "learner_role": "Diner",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "20s-30s",
+        "register": "professional-friendly"
+      },
+      "voice_hint": "smooth and professional",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good evening! My name is Jake and I'll be your server tonight. Are you ready to order?",
+          "ko": "안녕하세요! 저는 제이크이고 오늘 저녁 담당 웨이터입니다. 주문하실 준비 되셨나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. I want to order steak, please.",
+          "ko": "네. 스테이크를 주문하고 싶어요.",
+          "alt_en": [
+            "I'd like the steak, please.",
+            "Can I have the steak?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Excellent choice! How would you like your steak cooked — rare, medium, or well-done?",
+          "ko": "훌륭한 선택이에요! 스테이크를 어떻게 익혀드릴까요? 레어, 미디엄, 또는 웰던?",
+          "recast_target": "I want to order steak",
+          "recast_note": "'I'd like the steak'으로 더 자연스러운 표현 간접 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Medium, please. And what side dish comes with it?",
+          "ko": "미디엄으로 해주세요. 그리고 어떤 사이드 요리가 같이 나오나요?",
+          "alt_en": [
+            "Medium, please. What sides does it come with?",
+            "I'll have it medium. What are the side options?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "It comes with mashed potatoes and a salad. Would you like anything to drink?",
+          "ko": "으깬 감자와 샐러드가 함께 나와요. 음료는 무엇으로 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Just water, please.",
+          "ko": "물만 주세요.",
+          "alt_en": [
+            "Water is fine, thank you.",
+            "Just a glass of water, please."
+          ]
+        }
+      ],
+      "key_expressions": [
+        "I'd like the ~, please.",
+        "How would you like it cooked?",
+        "What comes with it?"
+      ],
+      "common_mistakes_ko": [
+        "스테이크 굽기는 rare(레어), medium-rare, medium, well-done 순으로 익힌 정도가 달라집니다.",
+        "'I want'보다 'I'd like'이 레스토랑에서 더 공손하게 들립니다."
+      ],
+      "cultural_note_ko": "미국 레스토랑에서는 팁 문화가 있습니다. 음식값의 15-20%를 팁으로 남기는 것이 일반적입니다."
+    },
+    {
+      "id": "P1-ORDER-003",
+      "title_ko": "패스트푸드점에서 세트 메뉴 주문",
+      "context_ko": "맥도날드 같은 패스트푸드점에서 콤보 세트를 주문한다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Fast Food Cashier",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "teens-20s",
+        "register": "casual"
+      },
+      "voice_hint": "quick and upbeat",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hi! Welcome. What can I get for you?",
+          "ko": "안녕하세요! 어서 오세요. 무엇을 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I want number two combo, please.",
+          "ko": "2번 콤보 세트 주세요.",
+          "alt_en": [
+            "Can I get the number two combo?",
+            "I'll have the number two meal, please."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "The number two combo — that's a cheeseburger, fries, and a drink. What size do you want for your drink?",
+          "ko": "2번 콤보요. 치즈버거, 감자튀김, 음료 세트예요. 음료는 어떤 사이즈로 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Large. And can I change drink to orange juice?",
+          "ko": "라지로요. 그리고 음료를 오렌지 주스로 바꿀 수 있나요?",
+          "alt_en": [
+            "Large size. Can I swap the drink for orange juice?",
+            "Large, please. And can I have orange juice instead?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Sorry, we don't have orange juice. We have Coke, Diet Coke, Sprite, and lemonade. Which one would you like?",
+          "ko": "죄송해요, 오렌지 주스는 없어요. 콜라, 다이어트 콜라, 스프라이트, 레모네이드가 있어요. 어떤 걸로 드릴까요?",
+          "recast_target": "can I change drink to orange juice",
+          "recast_note": "'can I swap the drink for orange juice?'로 자연스러운 표현 간접 제시"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay, I take Sprite.",
+          "ko": "그럼 스프라이트로 할게요.",
+          "alt_en": [
+            "I'll have Sprite, then.",
+            "Sprite is fine, thank you."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Got it! Large number two with Sprite. That'll be nine dollars twenty-five. For here or to go?",
+          "ko": "알겠어요! 라지 2번 콤보에 스프라이트요. 9달러 25센트입니다. 여기서 드실 건가요, 가져가실 건가요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Can I get the number two combo?",
+        "Can I swap ~ for ~?",
+        "For here or to go?"
+      ],
+      "common_mistakes_ko": [
+        "'I take'보다 'I'll have'가 주문할 때 더 자연스럽습니다.",
+        "'For here or to go?'는 매장 식사 여부를 묻는 표현입니다."
+      ],
+      "cultural_note_ko": "패스트푸드점에서는 'combo' 또는 'meal'로 세트 메뉴를 주문합니다. 번호로 주문하는 것이 일반적입니다."
+    },
+    {
+      "id": "P1-ORDER-004",
+      "title_ko": "베이커리에서 빵과 커피 주문",
+      "context_ko": "동네 베이커리에서 아침 식사로 빵과 커피를 주문한다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Bakery Staff",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s-40s",
+        "register": "warm-friendly"
+      },
+      "voice_hint": "gentle and warm",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good morning! What can I get for you today?",
+          "ko": "좋은 아침이에요! 오늘 무엇을 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello! I want croissant and coffee please.",
+          "ko": "안녕하세요! 크루아상이랑 커피 주세요.",
+          "alt_en": [
+            "Can I have a croissant and a coffee, please?",
+            "I'd like a croissant and coffee, please."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course! What kind of coffee — drip coffee, latte, cappuccino?",
+          "ko": "물론이죠! 커피는 어떤 걸로요? 드립 커피, 라떼, 카푸치노 중에서요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Cappuccino, please. Is there blueberry muffin?",
+          "ko": "카푸치노 주세요. 블루베리 머핀도 있나요?",
+          "alt_en": [
+            "Cappuccino, please. Do you have blueberry muffins?",
+            "I'll have a cappuccino. Are there any blueberry muffins?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "I'm sorry, we sold out the blueberry muffins this morning. We have chocolate muffins and lemon muffins left. Would you like one of those?",
+          "ko": "죄송해요, 블루베리 머핀은 오늘 아침에 다 팔렸어요. 초콜릿 머핀과 레몬 머핀이 남아 있어요. 그걸로 드릴까요?",
+          "recast_target": "Is there blueberry muffin",
+          "recast_note": "'Do you have blueberry muffins?'로 복수형 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Oh, okay. Then I take lemon muffin.",
+          "ko": "아, 그렇군요. 그럼 레몬 머핀 할게요.",
+          "alt_en": [
+            "I'll have a lemon muffin then.",
+            "Lemon muffin, please."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Great choice! A croissant, lemon muffin, and a cappuccino. That's eight dollars even. Enjoy your morning!",
+          "ko": "좋은 선택이에요! 크루아상, 레몬 머핀, 카푸치노 하나. 8달러입니다. 좋은 아침 되세요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Do you have any ~?",
+        "We sold out of ~.",
+        "I'll have ~ then."
+      ],
+      "common_mistakes_ko": [
+        "'Is there blueberry muffin?'보다 'Do you have blueberry muffins?'가 더 자연스럽습니다.",
+        "'I take'보다 'I'll have'가 주문 시 더 적절합니다."
+      ],
+      "cultural_note_ko": "베이커리에서 인기 있는 품목은 일찍 품절되는 경우가 많습니다. 'We're sold out of ~'는 품절 표현입니다."
+    },
+    {
+      "id": "P1-ORDER-005",
+      "title_ko": "푸드트럭에서 점심 주문",
+      "context_ko": "거리의 멕시칸 푸드트럭에서 점심을 주문한다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Food Truck Vendor",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s-40s",
+        "register": "casual-energetic"
+      },
+      "voice_hint": "loud and energetic",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hey! What are you having today? Tacos, burritos, quesadillas — we got it all!",
+          "ko": "안녕하세요! 오늘 뭐 드실 건가요? 타코, 부리또, 케사디아 — 다 있어요!",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Um, what is different between taco and burrito?",
+          "ko": "음, 타코랑 부리또가 어떻게 달라요?",
+          "alt_en": [
+            "What's the difference between a taco and a burrito?",
+            "Can you explain the difference between tacos and burritos?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Good question! A taco is small with a corn shell. A burrito is big — it's wrapped in a flour tortilla with rice and beans inside.",
+          "ko": "좋은 질문이에요! 타코는 옥수수 껍질로 만든 작은 거예요. 부리또는 크고 밀가루 토르티야로 쌀과 콩을 넣어 싸는 거예요.",
+          "recast_target": "what is different between",
+          "recast_note": "'What's the difference between a taco and a burrito?'로 자연스러운 비교 표현 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I see. I want two tacos with chicken, please.",
+          "ko": "알겠어요. 치킨 타코 두 개 주세요.",
+          "alt_en": [
+            "I'll have two chicken tacos, please.",
+            "Can I get two chicken tacos?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Two chicken tacos! Mild, medium, or hot salsa?",
+          "ko": "치킨 타코 두 개요! 살사는 마일드, 미디엄, 핫 중에서 어떻게 드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Mild, please. Oh, how much is it?",
+          "ko": "마일드로요. 그런데 얼마예요?",
+          "alt_en": [
+            "Mild, please. How much does that come to?",
+            "Mild. What's the total?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Two chicken tacos with mild salsa — that's six dollars. Cash or card?",
+          "ko": "치킨 타코 두 개에 마일드 살사 — 6달러예요. 현금이나 카드로 내실 건가요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "What's the difference between ~ and ~?",
+        "I'll have two ~, please.",
+        "Cash or card?"
+      ],
+      "common_mistakes_ko": [
+        "'what is different'보다 'What's the difference between'이 비교 질문의 자연스러운 표현입니다.",
+        "음식 양을 말할 때 숫자 앞에 관사 불필요: 'two tacos' (not 'a two tacos')."
+      ],
+      "cultural_note_ko": "푸드트럭에서는 카드나 현금 모두 사용 가능하지만, 소액의 경우 카드 수수료로 최소 금액을 요구하는 곳도 있습니다."
+    },
+    {
+      "id": "P1-SHOP-001",
+      "title_ko": "옷 가게에서 사이즈 물어보기",
+      "context_ko": "쇼핑몰 옷 가게에서 마음에 드는 티셔츠의 사이즈를 문의한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Clothing Store Staff",
+      "learner_role": "Shopper",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s",
+        "register": "helpful-friendly"
+      },
+      "voice_hint": "bright and helpful",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hi! Can I help you find something?",
+          "ko": "안녕하세요! 찾으시는 거 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. I like this t-shirt. Do you have in medium?",
+          "ko": "네. 이 티셔츠 마음에 들어요. 미디엄 사이즈 있나요?",
+          "alt_en": [
+            "Yes, do you have this t-shirt in medium?",
+            "I'd like this t-shirt in a medium, please."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Let me check! We have this t-shirt in medium — in blue, white, and black. Which color do you prefer?",
+          "ko": "확인해 드릴게요! 이 티셔츠 미디엄 사이즈가 있어요 — 파란색, 흰색, 검은색으로요. 어떤 색상을 선호하세요?",
+          "recast_target": "Do you have in medium",
+          "recast_note": "'do you have this in medium?'으로 'this'를 넣은 완전한 문장 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I like the blue one. Can I try it?",
+          "ko": "파란색이 좋아요. 입어봐도 되나요?",
+          "alt_en": [
+            "The blue one, please. Can I try it on?",
+            "I'll take the blue. Is there a fitting room?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Of course! The fitting room is just around the corner on your left.",
+          "ko": "물론이죠! 피팅룸은 바로 왼쪽 모퉁이를 돌면 있어요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Thank you! Oh, how much is this shirt?",
+          "ko": "감사해요! 아, 이 셔츠 얼마예요?",
+          "alt_en": [
+            "Thanks! By the way, how much is it?",
+            "How much does this t-shirt cost?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "It's twenty-nine ninety-nine. And we have a sale today — buy two, get one free!",
+          "ko": "29달러 99센트예요. 그리고 오늘 세일 중이에요 — 두 개 사면 하나 무료예요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Do you have this in medium?",
+        "Can I try it on?",
+        "How much is it?"
+      ],
+      "common_mistakes_ko": [
+        "'try it'만 쓰면 어색합니다. 옷을 입어볼 때는 'try it on'이라고 해야 합니다.",
+        "'Do you have in medium?'에 'this'를 추가해 'Do you have this in medium?'으로 써야 완전한 문장이 됩니다."
+      ],
+      "cultural_note_ko": "미국 옷 가게의 사이즈는 XS/S/M/L/XL로 표기됩니다. 한국 사이즈와 차이가 있으니 꼭 입어보는 것이 좋습니다."
+    },
+    {
+      "id": "P1-SHOP-002",
+      "title_ko": "전자제품 매장에서 핸드폰 케이스 찾기",
+      "context_ko": "전자제품 매장에서 특정 모델의 핸드폰 케이스를 찾는다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Electronics Store Staff",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "20s-30s",
+        "register": "knowledgeable-helpful"
+      },
+      "voice_hint": "confident and informative",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Welcome! Are you looking for something specific today?",
+          "ko": "어서 오세요! 오늘 특별히 찾으시는 게 있나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. I need case for iPhone 15. Do you have?",
+          "ko": "네. 아이폰 15 케이스가 필요해요. 있나요?",
+          "alt_en": [
+            "I'm looking for a case for the iPhone 15.",
+            "Do you have iPhone 15 cases?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Yes, we have iPhone 15 cases. We have many styles — clear cases, leather cases, and rugged cases for protection. What type do you prefer?",
+          "ko": "네, 아이폰 15 케이스 있어요. 다양한 스타일이 있어요 — 투명 케이스, 가죽 케이스, 그리고 보호용 러기드 케이스요. 어떤 종류를 선호하세요?",
+          "recast_target": "need case for iPhone 15",
+          "recast_note": "'I'm looking for a case for the iPhone 15'로 더 자연스러운 표현 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I want clear case. What is most popular?",
+          "ko": "투명 케이스를 원해요. 가장 인기 있는 게 뭔가요?",
+          "alt_en": [
+            "A clear case, please. Which one is most popular?",
+            "I'd like a clear case. What do you recommend?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "This one is very popular. It's thin, strong, and it shows off your phone color. It's twenty-five dollars.",
+          "ko": "이게 아주 인기가 많아요. 얇고 튼튼하며 핸드폰 색상이 잘 보여요. 25달러입니다.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Good. I take it. Can I pay by card?",
+          "ko": "좋아요. 그걸로 할게요. 카드로 결제할 수 있나요?",
+          "alt_en": [
+            "I'll take it. Do you accept card payments?",
+            "I'll get this one. Can I pay with a card?"
+          ]
+        }
+      ],
+      "key_expressions": [
+        "I'm looking for a case for ~.",
+        "What do you recommend?",
+        "Can I pay with a card?"
+      ],
+      "common_mistakes_ko": [
+        "'I need case for'보다 'I'm looking for a case for'가 더 자연스러운 표현입니다.",
+        "'pay by card'와 'pay with a card' 모두 쓸 수 있습니다."
+      ],
+      "cultural_note_ko": "미국 전자제품 매장에서는 직원이 적극적으로 도움을 제공합니다. 모르면 편하게 'Can you recommend something?'이라고 물어보세요."
+    },
+    {
+      "id": "P1-SHOP-003",
+      "title_ko": "기념품 가게에서 선물 고르기",
+      "context_ko": "관광지 기념품 가게에서 친구에게 줄 선물을 고른다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Souvenir Shop Owner",
+      "learner_role": "Tourist",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "50s",
+        "register": "friendly-casual"
+      },
+      "voice_hint": "cheerful and chatty",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello there! Looking for a souvenir? We have the best stuff in town!",
+          "ko": "안녕하세요! 기념품 찾으세요? 저희가 이 동네에서 제일 좋은 것들이 있어요!",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hi! I want to buy gift for my friend. She likes New York.",
+          "ko": "안녕하세요! 친구한테 줄 선물을 사고 싶어요. 친구가 뉴욕을 좋아해요.",
+          "alt_en": [
+            "I'm looking for a gift for my friend who loves New York.",
+            "Can you suggest a gift? My friend loves New York."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Perfect place for that! How about a I Love NY mug? Or a snow globe with the Statue of Liberty?",
+          "ko": "딱 좋은 데 오셨어요! 아이 러브 뉴욕 머그컵은 어떠세요? 아니면 자유의 여신상 스노우볼은요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Snow globe is nice. How much cost it?",
+          "ko": "스노우볼 좋네요. 얼마예요?",
+          "alt_en": [
+            "The snow globe looks nice. How much is it?",
+            "I like the snow globe. What's the price?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "This one is eighteen dollars. But if you buy two, I give you a discount — fifteen dollars each!",
+          "ko": "이건 18달러예요. 근데 두 개 사시면 할인해 드릴게요 — 개당 15달러요!",
+          "recast_target": "How much cost it",
+          "recast_note": "'How much is it?'이 올바른 어순임을 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay, I buy one. Can you wrap it for gift?",
+          "ko": "그냥 하나 살게요. 선물 포장해 주실 수 있나요?",
+          "alt_en": [
+            "Just one, please. Can you gift wrap it?",
+            "I'll take one. Could you wrap it as a gift?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Sure! I'll put it in a nice box with tissue paper. No extra charge for that!",
+          "ko": "물론이죠! 예쁜 상자에 티슈 페이퍼랑 넣어 드릴게요. 추가 비용은 없어요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'm looking for a gift for ~.",
+        "How much is it?",
+        "Can you gift wrap it?"
+      ],
+      "common_mistakes_ko": [
+        "'How much cost it?'는 어순이 틀렸습니다. 'How much is it?' 또는 'How much does it cost?'가 맞습니다.",
+        "선물 포장을 부탁할 때는 'gift wrap it' 또는 'wrap it as a gift'라고 합니다."
+      ],
+      "cultural_note_ko": "미국 관광지 기념품 가게에서는 흥정이 잘 통하지 않습니다. 단, 여러 개 구매 시 할인을 요청해 볼 수 있습니다."
+    },
+    {
+      "id": "P1-SHOP-004",
+      "title_ko": "약국에서 감기약 구입",
+      "context_ko": "미국 약국(CVS/Walgreens)에서 감기 증상에 맞는 약을 구입한다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Pharmacist",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "40s",
+        "register": "professional-caring"
+      },
+      "voice_hint": "calm and reassuring",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! Can I help you find something?",
+          "ko": "안녕하세요! 찾으시는 거 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. I have cold. I need medicine for cough and runny nose.",
+          "ko": "네. 감기에 걸렸어요. 기침이랑 콧물 약이 필요해요.",
+          "alt_en": [
+            "I have a cold. Can you recommend something for cough and runny nose?",
+            "I'm looking for cold medicine — for cough and a runny nose."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I understand. Do you have any other symptoms — like fever or body aches?",
+          "ko": "알겠어요. 다른 증상도 있나요? 열이나 몸살 같은 거요?",
+          "recast_target": "I have cold",
+          "recast_note": "'I have a cold'로 관사 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "No fever. Just cough and nose problem.",
+          "ko": "열은 없어요. 기침이랑 코 문제만요.",
+          "alt_en": [
+            "No fever. Just cough and a runny nose.",
+            "Only cough and runny nose, no fever."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Okay. I recommend DayQuil for daytime — it helps with cough and runny nose without making you sleepy. But if you're taking any other medicine, let me know first.",
+          "ko": "알겠어요. 낮에는 데이퀼을 추천해요 — 졸음 없이 기침과 콧물에 효과적이에요. 다른 약을 복용 중이시면 먼저 알려주세요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "No other medicine. Is DayQuil safe? I am pregnant.",
+          "ko": "다른 약은 없어요. 데이퀼 안전한가요? 저 임신 중이에요.",
+          "alt_en": [
+            "No other medication. Is DayQuil safe if you're pregnant?",
+            "I'm pregnant — is DayQuil okay to take?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Oh, important information! If you're pregnant, please don't take DayQuil without asking your doctor first. Let me show you some safer options — but your doctor's advice is best.",
+          "ko": "아, 중요한 정보네요! 임신 중에는 꼭 의사에게 먼저 확인하고 데이퀼을 드세요. 더 안전한 선택지를 보여드릴 수는 있지만, 의사의 조언이 가장 좋아요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I have a cold.",
+        "Can you recommend something for ~?",
+        "Is ~ safe?"
+      ],
+      "common_mistakes_ko": [
+        "'I have cold'가 아니라 'I have a cold' — 감기에는 관사 'a'가 필요합니다.",
+        "'nose problem' 대신 'runny nose' 또는 'stuffy nose'가 더 정확한 표현입니다."
+      ],
+      "cultural_note_ko": "미국 약국에서는 처방전 없이 살 수 있는 약(OTC, over-the-counter)이 많지만, 임신 중이거나 다른 약을 복용 중일 때는 반드시 약사나 의사에게 문의해야 합니다."
+    },
+    {
+      "id": "P1-SHOP-005",
+      "title_ko": "마트에서 계산 및 영수증 문의",
+      "context_ko": "마트에서 계산을 마치고 영수증의 가격 오류를 발견한다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Cashier",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "20s-30s",
+        "register": "professional"
+      },
+      "voice_hint": "polite and efficient",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hi! Did you find everything okay today?",
+          "ko": "안녕하세요! 오늘 필요한 거 다 찾으셨나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, thank you. Can I check receipt please? I think price is wrong.",
+          "ko": "네, 감사해요. 영수증 확인할 수 있을까요? 가격이 틀린 것 같아요.",
+          "alt_en": [
+            "Excuse me, I think there's an error on my receipt.",
+            "Can I check the receipt? I think I was overcharged."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course, let me see. Which item do you think is wrong?",
+          "ko": "물론이죠, 볼게요. 어떤 항목이 틀린 것 같으세요?",
+          "recast_target": "price is wrong",
+          "recast_note": "'there's an error on the receipt'으로 자연스러운 표현 간접 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "This apple juice. The sign say two dollars, but receipt show three dollars.",
+          "ko": "이 사과 주스요. 표지판에는 2달러라고 했는데, 영수증에는 3달러로 나와요.",
+          "alt_en": [
+            "This apple juice — the sign said two dollars, but I was charged three.",
+            "The apple juice was marked two dollars, but the receipt says three."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "You're right — I can see the difference. I need to call my manager for a price correction. One moment, please.",
+          "ko": "맞아요 — 차이가 보이네요. 가격 수정을 위해 매니저를 불러야 해요. 잠깐만요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay, I wait. How long will it take?",
+          "ko": "알겠어요, 기다릴게요. 얼마나 걸려요?",
+          "alt_en": [
+            "Sure, I'll wait. How long will it take?",
+            "Okay. Will it take long?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Just a few minutes. I'm sorry for the inconvenience. We'll refund one dollar to your card.",
+          "ko": "몇 분만요. 불편을 드려서 죄송해요. 1달러를 카드로 환불해 드릴게요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I think I was overcharged.",
+        "The sign said ~ but the receipt says ~.",
+        "How long will it take?"
+      ],
+      "common_mistakes_ko": [
+        "'price is wrong'보다 'I was overcharged' 또는 'there's an error on my receipt'이 더 정확합니다.",
+        "과거형을 사용해야 합니다: 'the sign said' (not 'say'), 'the receipt showed' (not 'show')."
+      ],
+      "cultural_note_ko": "미국 마트에서 가격 오류 발견 시, 많은 가게에서 표기 가격으로 정산해 주는 정책이 있습니다. 영수증을 항상 확인하는 습관이 중요합니다."
+    },
+    {
+      "id": "P1-HOTEL-001",
+      "title_ko": "호텔 체크인하기",
+      "context_ko": "예약한 호텔에서 체크인 절차를 진행한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Hotel Receptionist",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s-30s",
+        "register": "professional-warm"
+      },
+      "voice_hint": "welcoming and polished",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good evening! Welcome to Grand Palace Hotel. Are you checking in?",
+          "ko": "좋은 저녁이에요! 그랜드 팰리스 호텔에 오신 걸 환영합니다. 체크인하시나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, I check in. My name is Lee Junho.",
+          "ko": "네, 체크인이요. 제 이름은 이준호예요.",
+          "alt_en": [
+            "Yes, I'd like to check in. My name is Lee Junho.",
+            "I have a reservation. I'm Lee Junho."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Welcome, Mr. Lee! Let me find your reservation. May I see your ID and credit card, please?",
+          "ko": "환영합니다, 이 고객님! 예약을 찾아볼게요. 신분증과 신용카드를 보여주실 수 있을까요?",
+          "recast_target": "I check in",
+          "recast_note": "'I'd like to check in'으로 더 공손한 표현 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Here is my passport and card.",
+          "ko": "여기 여권이랑 카드요.",
+          "alt_en": [
+            "Here you go — my passport and credit card.",
+            "Here's my passport and card."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Perfect, thank you. You have a deluxe room on the 8th floor. Breakfast is included from 7 to 10 AM. Here are your key cards.",
+          "ko": "좋아요, 감사합니다. 8층 디럭스 룸이시네요. 조식은 오전 7시부터 10시까지 포함되어 있어요. 키카드 여기 있습니다.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Thank you! Is there free WiFi in room?",
+          "ko": "감사합니다! 객실에 무료 와이파이 있나요?",
+          "alt_en": [
+            "Thanks! Is there free WiFi in the room?",
+            "Is WiFi included in the room?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes, free WiFi is available throughout the hotel. The password is on a card in your room. Enjoy your stay!",
+          "ko": "네, 호텔 전체에서 무료 와이파이를 이용하실 수 있어요. 비밀번호는 객실 안 카드에 있어요. 즐거운 숙박 되세요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'd like to check in.",
+        "May I see your ID?",
+        "Is WiFi included?"
+      ],
+      "common_mistakes_ko": [
+        "체크인 요청 시 'I'd like to check in'이 'I check in'보다 더 공손합니다.",
+        "'free WiFi in room'에서 관사를 추가해 'in the room'으로 써야 합니다."
+      ],
+      "cultural_note_ko": "미국 호텔 체크인 시 신분증(여권)과 신용카드가 반드시 필요합니다. 디파짓(보증금)으로 카드를 홀드하는 경우가 많습니다."
+    },
+    {
+      "id": "P1-HOTEL-002",
+      "title_ko": "룸서비스 주문하기",
+      "context_ko": "호텔 방에서 전화로 룸서비스를 주문한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Room Service Staff",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "20s-30s",
+        "register": "professional"
+      },
+      "voice_hint": "clear telephone voice",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good morning, this is room service. How can I help you?",
+          "ko": "좋은 아침이에요, 룸서비스입니다. 무엇을 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. I want to order breakfast to my room.",
+          "ko": "안녕하세요. 방으로 아침 식사를 주문하고 싶어요.",
+          "alt_en": [
+            "Hi, I'd like to order breakfast to my room.",
+            "Can I order breakfast to room 605?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course! Can I have your room number, please?",
+          "ko": "물론이죠! 방 번호를 알려주실 수 있나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Room 605. I want scrambled eggs and orange juice.",
+          "ko": "605호예요. 스크램블드 에그랑 오렌지 주스 주세요.",
+          "alt_en": [
+            "It's room 605. I'd like scrambled eggs and orange juice.",
+            "605. Can I get scrambled eggs and orange juice?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Room 605 — scrambled eggs and orange juice. Toast or muffin on the side?",
+          "ko": "605호 — 스크램블드 에그에 오렌지 주스요. 사이드로 토스트나 머핀은요?",
+          "recast_target": "I want to order breakfast to my room",
+          "recast_note": "'I'd like to order'으로 더 자연스러운 표현 간접 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Toast, please. How long will take?",
+          "ko": "토스트 주세요. 얼마나 걸릴까요?",
+          "alt_en": [
+            "Toast, please. How long will it take?",
+            "Toast. How long before it arrives?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "About fifteen minutes. We'll knock on your door. Is there anything else?",
+          "ko": "약 15분이요. 문을 두드릴게요. 다른 건 없으세요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'd like to order ~ to my room.",
+        "Can I have your room number?",
+        "How long will it take?"
+      ],
+      "common_mistakes_ko": [
+        "전화 주문 시 'I want'보다 'I'd like'이 더 공손합니다.",
+        "'How long will take?'가 아니라 'How long will it take?' — 주어 'it'이 필요합니다."
+      ],
+      "cultural_note_ko": "룸서비스는 일반적으로 15-30분 이내에 배달됩니다. 배달 직원에게 팁($2-5)을 주는 것이 일반적입니다."
+    },
+    {
+      "id": "P1-HOTEL-003",
+      "title_ko": "객실 내 문제 신고하기",
+      "context_ko": "호텔 방에서 에어컨이 고장났다. 프런트에 신고한다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Front Desk Staff",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s",
+        "register": "professional-helpful"
+      },
+      "voice_hint": "calm and solution-focused",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Front desk, this is Sarah speaking. How can I help you?",
+          "ko": "프런트입니다, 사라입니다. 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. My room air condition is broken. It not working.",
+          "ko": "안녕하세요. 제 방 에어컨이 고장났어요. 작동이 안 돼요.",
+          "alt_en": [
+            "Hi, the air conditioning in my room isn't working.",
+            "Excuse me, the AC in room 412 is broken."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I'm sorry to hear that. What room are you in?",
+          "ko": "불편을 드려서 죄송해요. 몇 호실이세요?",
+          "recast_target": "air condition is broken / It not working",
+          "recast_note": "'the air conditioning isn't working'으로 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Room 412. The room is very hot. I cannot sleep.",
+          "ko": "412호예요. 방이 너무 더워요. 잠을 잘 수가 없어요.",
+          "alt_en": [
+            "Room 412. It's really hot and I can't sleep.",
+            "I'm in room 412. The room is too hot to sleep."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "I understand. I'll send a maintenance person right away. Can you wait about 20 minutes?",
+          "ko": "이해합니다. 바로 유지보수 담당자를 보내드릴게요. 약 20분 기다리실 수 있나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay. But if not fixed, can I change room?",
+          "ko": "알겠어요. 근데 고쳐지지 않으면 방을 바꿀 수 있나요?",
+          "alt_en": [
+            "Okay. If it can't be fixed, can I change rooms?",
+            "Sure. If the problem persists, is it possible to switch rooms?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Of course! If maintenance can't fix it quickly, we'll move you to another room at no extra charge.",
+          "ko": "물론이죠! 유지보수 담당자가 빨리 못 고치면 추가 비용 없이 다른 방으로 이동해 드릴게요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "The air conditioning isn't working.",
+        "Can I change rooms?",
+        "I'll send someone right away."
+      ],
+      "common_mistakes_ko": [
+        "'air condition'이 아니라 'air conditioning' 또는 'AC'가 올바른 표현입니다.",
+        "'It not working'은 'It's not working'이 맞습니다 — be 동사가 필요합니다."
+      ],
+      "cultural_note_ko": "호텔 문제 발생 시 주저하지 말고 프런트에 알리세요. 대부분의 호텔은 즉각적인 해결책을 제공합니다."
+    },
+    {
+      "id": "P1-HOTEL-004",
+      "title_ko": "늦은 체크아웃 요청하기",
+      "context_ko": "다음 날 비행기 시간 때문에 체크아웃 시간 연장을 요청한다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Hotel Receptionist",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s-40s",
+        "register": "professional"
+      },
+      "voice_hint": "polite and efficient",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good morning! How can I help you today?",
+          "ko": "좋은 아침이에요! 오늘 무엇을 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. My check-out time is 12. Can I check out later? My flight is at 5 PM.",
+          "ko": "안녕하세요. 체크아웃이 12시인데요. 늦게 체크아웃 할 수 있나요? 비행기가 오후 5시예요.",
+          "alt_en": [
+            "Excuse me, can I request a late checkout? My flight is at 5 PM.",
+            "Is a late checkout possible? I fly at 5 PM."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I see. Let me check the availability. What time would you like to check out?",
+          "ko": "알겠어요. 가능 여부를 확인해 볼게요. 몇 시에 체크아웃하고 싶으세요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Can I stay until 3 PM? That give me enough time for airport.",
+          "ko": "오후 3시까지 있을 수 있을까요? 공항 가기에 충분한 시간이 될 것 같아요.",
+          "alt_en": [
+            "Until 3 PM, please. That gives me enough time to get to the airport.",
+            "Could I check out at 3 PM? My airport is about an hour away."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "I'm sorry, but we're fully booked tonight. We can extend to 1 PM at no charge, but 3 PM would be a two-hour fee of thirty dollars. Is that okay?",
+          "ko": "죄송합니다만, 오늘 밤 예약이 꽉 찼어요. 1시까지는 무료로 연장 가능하지만, 3시는 2시간 요금으로 30달러가 추가됩니다. 괜찮으세요?",
+          "recast_target": "That give me",
+          "recast_note": "'That gives me'으로 3인칭 단수 주어 동사 일치 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Oh, thirty dollars is too much. Can I leave bags here after check out?",
+          "ko": "아, 30달러는 너무 비싸네요. 체크아웃 후에 여기 짐을 맡길 수 있나요?",
+          "alt_en": [
+            "That's too expensive. Can I store my luggage here after I check out?",
+            "Is there luggage storage available after checkout?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Absolutely! We have complimentary luggage storage until 6 PM. You can explore the city and pick up your bags before heading to the airport.",
+          "ko": "물론이죠! 오후 6시까지 무료 수하물 보관 서비스가 있어요. 도시를 더 둘러보신 후 공항 가기 전에 짐을 찾아가시면 돼요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Can I request a late checkout?",
+        "Is there luggage storage?",
+        "Can I store my luggage here?"
+      ],
+      "common_mistakes_ko": [
+        "'late check-out' 또는 'late checkout' 두 표현 모두 사용 가능합니다.",
+        "'That give me'이 아니라 'That gives me' — 3인칭 단수 주어에 동사 -s가 필요합니다."
+      ],
+      "cultural_note_ko": "호텔 수하물 보관 서비스(luggage storage)는 대부분 무료로 제공됩니다. 장거리 여행 시 유용하게 활용할 수 있습니다."
+    },
+    {
+      "id": "P1-HOTEL-005",
+      "title_ko": "호텔 시설 이용 문의",
+      "context_ko": "호텔 수영장과 피트니스 센터 이용 방법을 문의한다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Hotel Concierge",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s-30s",
+        "register": "helpful-enthusiastic"
+      },
+      "voice_hint": "bright and informative",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! Welcome to the concierge desk. What can I do for you?",
+          "ko": "안녕하세요! 컨시어지 데스크에 오신 걸 환영해요. 무엇을 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hi. I want to use swimming pool and gym. When is it open?",
+          "ko": "안녕하세요. 수영장이랑 헬스장을 이용하고 싶어요. 언제 열어요?",
+          "alt_en": [
+            "What are the hours for the pool and gym?",
+            "When is the pool and fitness center open?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "The pool is open from 7 AM to 10 PM, and the fitness center is open 24 hours. Both are free for hotel guests!",
+          "ko": "수영장은 오전 7시부터 오후 10시까지, 피트니스 센터는 24시간 운영해요. 호텔 투숙객은 모두 무료예요!",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Great! Do I need bring towel?",
+          "ko": "좋아요! 수건을 가져가야 하나요?",
+          "alt_en": [
+            "Do I need to bring my own towel?",
+            "Are towels provided at the pool?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "No need! We provide towels at both facilities. Just bring your room key card — you'll need it to enter.",
+          "ko": "필요 없어요! 두 시설 모두 수건을 제공해요. 객실 키카드만 가져오세요 — 입장에 필요해요.",
+          "recast_target": "Do I need bring towel",
+          "recast_note": "'Do I need to bring a towel?'으로 'to bring'과 관사 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Can I bring outside food to pool?",
+          "ko": "수영장에 외부 음식을 가져갈 수 있나요?",
+          "alt_en": [
+            "Can I bring outside food to the pool area?",
+            "Is outside food allowed by the pool?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "I'm sorry, outside food is not permitted in the pool area. But we have a poolside bar with snacks and drinks. It's really popular!",
+          "ko": "죄송해요, 수영장 구역에는 외부 음식 반입이 불가해요. 하지만 스낵과 음료가 있는 풀사이드 바가 있어요. 정말 인기가 많아요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "What are the hours for ~?",
+        "Do I need to bring ~?",
+        "Is ~ allowed?"
+      ],
+      "common_mistakes_ko": [
+        "'Do I need bring'은 'Do I need to bring'이 맞습니다 — 'need to' 뒤에 동사원형이 옵니다.",
+        "장소 앞 관사: 'to the pool' (특정 장소이므로 the 사용)."
+      ],
+      "cultural_note_ko": "고급 호텔의 부대시설(수영장, 피트니스 등)은 대부분 투숙객에게 무료로 제공됩니다. 이용 전 시간과 규칙을 확인하세요."
+    },
+    {
+      "id": "P1-TRANS-001",
+      "title_ko": "택시 타고 목적지 말하기",
+      "context_ko": "뉴욕 길거리에서 택시를 잡아 타고 목적지를 말한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Taxi Driver",
+      "learner_role": "Passenger",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "40s-50s",
+        "register": "casual-direct"
+      },
+      "voice_hint": "gruff but friendly",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Where to?",
+          "ko": "어디 가세요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I go to Times Square, please.",
+          "ko": "타임스 스퀘어 가주세요.",
+          "alt_en": [
+            "Times Square, please.",
+            "Can you take me to Times Square?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Times Square. Got it! It might take about twenty minutes with this traffic.",
+          "ko": "타임스 스퀘어요. 알겠어요! 이 교통 상황에서는 약 20분 정도 걸릴 것 같아요.",
+          "recast_target": "I go to Times Square",
+          "recast_note": "'Can you take me to Times Square?'로 더 자연스러운 표현 간접 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Okay. How much will it cost?",
+          "ko": "알겠어요. 얼마나 나올까요?",
+          "alt_en": [
+            "How much will it be?",
+            "About how much is the fare?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Around fifteen to twenty dollars with the meter. Plus tip, of course.",
+          "ko": "미터기로 대략 15달러에서 20달러 사이예요. 물론 팁은 별도고요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay. Can you drop me at 7th Avenue side?",
+          "ko": "알겠어요. 7번 애비뉴 쪽에 내려주실 수 있나요?",
+          "alt_en": [
+            "Can you drop me off on 7th Avenue?",
+            "Please let me off on the 7th Avenue side."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Sure, 7th Avenue side. No problem!",
+          "ko": "물론이죠, 7번 애비뉴 쪽이요. 문제없어요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Can you take me to ~?",
+        "How much will it be?",
+        "Can you drop me off at ~?"
+      ],
+      "common_mistakes_ko": [
+        "택시에서 목적지를 말할 때 'I go to'보다 '[장소], please' 또는 'Can you take me to ~?'가 더 자연스럽습니다.",
+        "'drop me'가 아니라 'drop me off' — 차에서 내려주다."
+      ],
+      "cultural_note_ko": "미국 택시에서는 요금의 15-20%를 팁으로 주는 것이 일반적입니다. 카드 단말기에서 팁 비율을 선택할 수 있습니다."
+    },
+    {
+      "id": "P1-TRANS-002",
+      "title_ko": "버스 노선 및 정류장 확인",
+      "context_ko": "버스 정류장에서 올바른 버스와 내릴 정류장을 확인한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Bus Driver",
+      "learner_role": "Passenger",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "40s",
+        "register": "casual-helpful"
+      },
+      "voice_hint": "straightforward and practical",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Next stop — Central Park. Fares, please!",
+          "ko": "다음 정거장 — 센트럴 파크입니다. 요금 내세요!",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Excuse me. Does this bus go to Brooklyn Museum?",
+          "ko": "실례합니다. 이 버스 브루클린 박물관 가나요?",
+          "alt_en": [
+            "Does this bus stop at Brooklyn Museum?",
+            "Will this bus take me to Brooklyn Museum?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "No, this bus doesn't go to Brooklyn. You need the B45 bus. Get off at the next stop and transfer there.",
+          "ko": "아니요, 이 버스는 브루클린에 가지 않아요. B45 버스를 타셔야 해요. 다음 정거장에서 내리고 환승하세요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Oh, sorry. Where I get off for transfer?",
+          "ko": "아, 죄송해요. 환승하려면 어디서 내려요?",
+          "alt_en": [
+            "Where do I get off to transfer?",
+            "Which stop should I get off at?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Get off at 42nd Street — next stop. The B45 bus stop is right across the street.",
+          "ko": "42번 스트리트에서 내리세요 — 다음 정거장이에요. B45 버스 정류장이 바로 길 건너편에 있어요.",
+          "recast_target": "Where I get off",
+          "recast_note": "'Where do I get off?' 의문문 어순 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Thank you! How long wait for B45?",
+          "ko": "감사합니다! B45 버스는 얼마나 기다려요?",
+          "alt_en": [
+            "How long do I have to wait for the B45?",
+            "How often does the B45 come?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Should be about every ten minutes. Good luck!",
+          "ko": "10분마다 오는 것 같아요. 잘 가요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Does this bus go to ~?",
+        "Where do I get off?",
+        "How often does it come?"
+      ],
+      "common_mistakes_ko": [
+        "'Where I get off'는 어순이 틀렸습니다. 'Where do I get off?'가 맞습니다.",
+        "버스를 갈아탈 때는 'transfer' 또는 'change buses'라고 합니다."
+      ],
+      "cultural_note_ko": "미국 대도시 버스는 구글맵에서 실시간 도착 정보를 확인할 수 있습니다. 'Next bus in X minutes' 정보가 매우 정확합니다."
+    },
+    {
+      "id": "P1-TRANS-003",
+      "title_ko": "지하철 티켓 구매하기",
+      "context_ko": "지하철 자동발매기 앞에서 직원에게 티켓 구매 방법을 묻는다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Subway Station Worker",
+      "learner_role": "Commuter",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s-40s",
+        "register": "efficient-helpful"
+      },
+      "voice_hint": "quick and practical",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Can I help you?",
+          "ko": "도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, please. How to buy ticket for subway?",
+          "ko": "네, 부탁드려요. 지하철 티켓은 어떻게 사나요?",
+          "alt_en": [
+            "How do I buy a subway ticket?",
+            "Can you show me how to use this machine?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Sure! Do you want a single ride or an unlimited day pass?",
+          "ko": "물론이죠! 일회용이요, 아니면 무제한 일일 패스요?",
+          "recast_target": "How to buy ticket",
+          "recast_note": "'How do I buy a ticket?'으로 의문문 어순 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I use subway maybe five times today. What is cheaper?",
+          "ko": "오늘 지하철을 아마 다섯 번 정도 탈 것 같아요. 뭐가 더 저렴해요?",
+          "alt_en": [
+            "I'll use the subway about five times today. Which is cheaper?",
+            "What's better value if I ride five times?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Then the day pass is better — it's fifteen dollars unlimited. Five single rides cost fourteen dollars total, so it's almost the same, but the pass is easier.",
+          "ko": "그럼 일일 패스가 더 좋아요 — 무제한으로 15달러예요. 일회용 다섯 번은 14달러로 비슷하지만 패스가 더 편해요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay, I buy day pass. Machine accept credit card?",
+          "ko": "알겠어요, 일일 패스 살게요. 기계에서 신용카드 받나요?",
+          "alt_en": [
+            "I'll get the day pass. Does the machine accept credit cards?",
+            "Can I pay by card at the machine?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes! Tap your card on the screen, then select the day pass option. It's very simple.",
+          "ko": "네! 카드를 화면에 탭하고 일일 패스 옵션을 선택하세요. 아주 간단해요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "How do I buy a ticket?",
+        "Which is cheaper?",
+        "Does the machine accept credit cards?"
+      ],
+      "common_mistakes_ko": [
+        "'How to buy'는 질문이 아니라 명사구입니다. 질문은 'How do I buy ~?'이어야 합니다.",
+        "'Machine accept'가 아니라 'Does the machine accept' — 의문문에 조동사 does가 필요합니다."
+      ],
+      "cultural_note_ko": "뉴욕 지하철 메트로카드는 자동발매기에서 쉽게 구매할 수 있으며, 관광객에게는 7일 패스가 가장 경제적입니다."
+    },
+    {
+      "id": "P1-TRANS-004",
+      "title_ko": "공항에서 게이트 변경 확인",
+      "context_ko": "탑승 게이트가 변경되어 직원에게 새 게이트를 확인한다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Airline Gate Agent",
+      "learner_role": "Passenger",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s",
+        "register": "professional"
+      },
+      "voice_hint": "clear and authoritative",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good afternoon. May I help you?",
+          "ko": "안녕하세요. 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. I see on board that my flight gate changed. My flight is KE 082 to Seoul.",
+          "ko": "네. 보드에서 제 비행기 게이트가 바뀐 걸 봤어요. KE 082편 서울행이에요.",
+          "alt_en": [
+            "Excuse me, my gate changed. I'm on flight KE 082 to Seoul.",
+            "The departure board shows a gate change for KE 082. Can you confirm?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Let me check. KE 082 to Seoul... Yes, the gate changed from B12 to C5. Please go to Terminal C right away.",
+          "ko": "확인해 볼게요. 서울행 KE 082편... 네, 게이트가 B12에서 C5로 변경됐어요. 바로 C 터미널로 가세요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Oh no! How far is C terminal from here?",
+          "ko": "아, 이런! C 터미널이 여기서 얼마나 멀어요?",
+          "alt_en": [
+            "How far is Terminal C from here?",
+            "Is Terminal C far?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "It's about a 10-minute walk, or you can take the inter-terminal shuttle — it leaves every 5 minutes just outside those doors.",
+          "ko": "걸어서 약 10분이에요, 아니면 셔틀버스를 타도 되는데 저 문 밖에서 5분마다 출발해요.",
+          "recast_target": "How far is C terminal",
+          "recast_note": "'How far is Terminal C?' — Terminal을 앞에 쓰는 것이 더 자연스러운 영어 순서"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "What time is boarding?",
+          "ko": "탑승 시간이 언제예요?",
+          "alt_en": [
+            "What time does boarding start?",
+            "When does the flight board?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Boarding starts in 25 minutes at 3:45 PM. Please hurry! Take the shuttle — it's faster.",
+          "ko": "탑승은 25분 후인 오후 3시 45분에 시작해요. 서두르세요! 셔틀을 타세요 — 더 빨라요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "My gate changed.",
+        "How far is ~ from here?",
+        "What time does boarding start?"
+      ],
+      "common_mistakes_ko": [
+        "'C terminal'보다 'Terminal C'가 더 자연스러운 순서입니다.",
+        "게이트 변경은 'gate change' 또는 'the gate changed'라고 합니다."
+      ],
+      "cultural_note_ko": "공항 게이트 변경은 자주 발생합니다. 항공사 앱 알림을 활성화해 두면 실시간으로 변경 정보를 받을 수 있습니다."
+    },
+    {
+      "id": "P1-TRANS-005",
+      "title_ko": "렌터카 반납 시 추가 요금 문의",
+      "context_ko": "렌터카 반납 시 예상치 못한 추가 요금이 청구되어 문의한다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Car Rental Agent",
+      "learner_role": "Customer",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s",
+        "register": "professional"
+      },
+      "voice_hint": "businesslike",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! Are you returning a vehicle today?",
+          "ko": "안녕하세요! 오늘 차 반납하시나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. But I have question about charge. Receipt show extra fifty dollars.",
+          "ko": "네. 근데 요금에 대해 질문이 있어요. 영수증에 50달러 추가 요금이 나왔어요.",
+          "alt_en": [
+            "Yes, but I have a question about an extra charge on my receipt.",
+            "I'm returning the car, but there's an unexpected fifty-dollar charge."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I see. Let me pull up your account. What's the reservation number?",
+          "ko": "알겠어요. 계정을 확인해 볼게요. 예약 번호가 어떻게 되세요?",
+          "recast_target": "Receipt show extra fifty dollars",
+          "recast_note": "'there's an extra charge on the receipt'으로 자연스러운 표현 간접 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "It is RNT-8842. The extra charge — what is it for?",
+          "ko": "RNT-8842예요. 추가 요금 — 이게 무엇 때문인가요?",
+          "alt_en": [
+            "It's RNT-8842. What is the extra charge for?",
+            "RNT-8842. Can you explain what the fifty dollars is for?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "I see it here — there's a $50 charge because you returned the car with less than a full tank of gas. Our policy requires a full tank.",
+          "ko": "여기 보이네요 — 기름을 가득 채우지 않고 반납하셔서 50달러가 청구됐어요. 저희 정책상 가득 채운 상태로 반납해야 해요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "But I put gas before come here. Maybe gauge not show correctly?",
+          "ko": "근데 오기 전에 주유했는데요. 계기판이 정확히 안 보여준 것 아닐까요?",
+          "alt_en": [
+            "But I filled the tank before coming here. Could the gauge be wrong?",
+            "I did fill up before returning. Maybe the gauge wasn't accurate?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "I understand your concern. Unfortunately, I cannot remove the charge without manager approval. Would you like to speak with the manager?",
+          "ko": "우려되시는 점 이해해요. 유감스럽게도 매니저 승인 없이는 요금을 취소할 수 없어요. 매니저와 이야기하시겠어요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "There's an extra charge on my receipt.",
+        "What is this charge for?",
+        "Can I speak with the manager?"
+      ],
+      "common_mistakes_ko": [
+        "'Receipt show'가 아니라 'The receipt shows' — 3인칭 단수 동사 활용 주의.",
+        "'before come here'가 아니라 'before coming here' — 전치사 다음에 동명사(-ing)."
+      ],
+      "cultural_note_ko": "렌터카 반납 시 기름은 반드시 가득 채워야 추가 요금이 발생하지 않습니다. 반납 전 영수증을 꼭 확인하세요."
+    },
+    {
+      "id": "P1-EMRG-001",
+      "title_ko": "지갑 분실 신고하기",
+      "context_ko": "쇼핑몰에서 지갑을 잃어버려 안내 데스크에 신고한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Lost and Found Staff",
+      "learner_role": "Visitor",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s",
+        "register": "calm-helpful"
+      },
+      "voice_hint": "reassuring",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Lost and Found, how can I help you?",
+          "ko": "분실물 센터입니다. 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I lose my wallet. I think I left it in food court.",
+          "ko": "지갑을 잃어버렸어요. 푸드코트에 두고 온 것 같아요.",
+          "alt_en": [
+            "I've lost my wallet. I think I left it in the food court.",
+            "I can't find my wallet — I may have left it at the food court."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I'm sorry to hear that! Let me check if anyone turned it in. Can you describe your wallet?",
+          "ko": "그러셨군요! 누가 가져다줬는지 확인해 볼게요. 지갑이 어떻게 생겼는지 설명해 주실 수 있나요?",
+          "recast_target": "I lose my wallet",
+          "recast_note": "'I've lost my wallet'으로 현재완료 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "It is black, small wallet. Made of leather. It has my Korean ID inside.",
+          "ko": "검은색 작은 지갑이에요. 가죽으로 만들어졌어요. 안에 한국 신분증이 있어요.",
+          "alt_en": [
+            "It's a small black leather wallet. My Korean ID is inside.",
+            "Black leather wallet, small. It has my ID card in it."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Let me check — yes! We have a black leather wallet here. Someone turned it in 20 minutes ago from the food court.",
+          "ko": "확인해 볼게요 — 네! 여기 검은 가죽 지갑이 있어요. 20분 전에 누군가 푸드코트에서 가져다줬어요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Oh, thank goodness! Is cash still inside?",
+          "ko": "아, 다행이에요! 현금은 안에 있나요?",
+          "alt_en": [
+            "Oh, what a relief! Is the cash still in it?",
+            "Thank goodness! Is everything still there?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Everything looks intact. Please show your ID so I can return it to you.",
+          "ko": "모든 게 그대로인 것 같아요. 돌려드리기 위해 신분증을 보여주세요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I've lost my wallet.",
+        "Can you describe it?",
+        "Is everything still there?"
+      ],
+      "common_mistakes_ko": [
+        "'I lose'는 현재형이어서 틀립니다. 방금 잃어버린 경우 'I've lost' (현재완료) 또는 'I lost' (단순 과거)를 씁니다.",
+        "'Made of leather'가 아니라 'It's a leather wallet' — 재질을 형용사로 표현하는 것이 더 자연스럽습니다."
+      ],
+      "cultural_note_ko": "미국 쇼핑몰의 분실물 센터(Lost and Found)는 보통 인포메이션 데스크 근처에 있습니다. 도난이 의심될 경우 경찰에 신고해야 합니다."
+    },
+    {
+      "id": "P1-EMRG-002",
+      "title_ko": "식당에서 음식 알레르기 긴급 상황",
+      "context_ko": "식당에서 견과류 알레르기 반응이 의심돼 도움을 요청한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Restaurant Manager",
+      "learner_role": "Diner",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "40s",
+        "register": "urgent-professional"
+      },
+      "voice_hint": "concerned and urgent",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Is everything okay? You look unwell.",
+          "ko": "괜찮으세요? 안색이 좋지 않아 보여요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I think I eat something with nuts. I am allergic. My throat feel strange.",
+          "ko": "견과류가 들어간 걸 먹은 것 같아요. 견과류 알레르기가 있어요. 목이 이상해요.",
+          "alt_en": [
+            "I think there were nuts in my food. I'm allergic. My throat feels strange.",
+            "I have a nut allergy and I think I ate something with nuts — my throat feels odd."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "This is serious! Do you have an EpiPen or any medicine with you?",
+          "ko": "심각한 상황이에요! 에피펜이나 약을 가지고 계신가요?",
+          "recast_target": "I eat something with nuts / My throat feel strange",
+          "recast_note": "'I think I ate'과 'my throat feels strange'으로 과거형/3인칭 단수 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "No. I don't have. Please call ambulance.",
+          "ko": "아니요, 없어요. 구급차 불러주세요.",
+          "alt_en": [
+            "No, I don't have one. Please call an ambulance.",
+            "I don't have my medicine. Call 911, please!"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "I'm calling 911 right now! Please sit down. Is your throat closing or swelling?",
+          "ko": "지금 바로 911에 전화할게요! 앉으세요. 목이 막히거나 붓고 있나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "A little swelling. I feel dizzy also.",
+          "ko": "조금 붓는 것 같아요. 어지럽기도 해요.",
+          "alt_en": [
+            "Some swelling, and I feel dizzy too.",
+            "It's swelling a little and I'm dizzy."
+          ]
+        }
+      ],
+      "key_expressions": [
+        "I have a nut allergy.",
+        "Please call an ambulance.",
+        "Call 911, please."
+      ],
+      "common_mistakes_ko": [
+        "긴급 상황에서는 짧고 명확하게 말하는 것이 중요합니다: 'Call 911!'",
+        "'I don't have' 뒤에 반복 없이 'one'으로 대체 가능: 'I don't have one.'"
+      ],
+      "cultural_note_ko": "미국 응급 전화번호는 911입니다. 알레르기 반응(아나필락시스)은 즉각적인 응급 처치가 필요한 위험한 상황입니다. 음식 주문 전 반드시 알레르기를 알려야 합니다."
+    },
+    {
+      "id": "P1-EMRG-003",
+      "title_ko": "핸드폰 분실 후 신고",
+      "context_ko": "호텔 로비에서 핸드폰을 잃어버려 프런트에 도움을 요청한다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Hotel Front Desk",
+      "learner_role": "Guest",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s-30s",
+        "register": "professional-empathetic"
+      },
+      "voice_hint": "calm and efficient",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! How can I help you?",
+          "ko": "안녕하세요! 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I cannot find my phone. I think leave it in lobby thirty minute ago.",
+          "ko": "핸드폰을 찾을 수가 없어요. 30분 전에 로비에 두고 온 것 같아요.",
+          "alt_en": [
+            "I've lost my phone. I think I left it in the lobby about thirty minutes ago.",
+            "I can't find my phone — I may have left it in the lobby."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I'm sorry! Let me check our lost and found. What does your phone look like?",
+          "ko": "죄송해요! 분실물함을 확인해 볼게요. 핸드폰이 어떻게 생겼나요?",
+          "recast_target": "I think leave it",
+          "recast_note": "'I think I left it'으로 과거시제 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "It is black iPhone. It has blue case on it.",
+          "ko": "검은색 아이폰이에요. 파란 케이스가 씌워져 있어요.",
+          "alt_en": [
+            "It's a black iPhone with a blue case.",
+            "Black iPhone in a blue case."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Let me check. I'm sorry, we don't have a phone matching that description. Can you remember where exactly you were sitting?",
+          "ko": "확인해 볼게요. 죄송합니다, 그 설명과 맞는 핸드폰은 없어요. 어디 앉아 계셨는지 기억하세요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Near window, by the coffee table. Is there CCTV? Can you check?",
+          "ko": "창문 근처 커피 테이블 옆이었어요. CCTV 있나요? 확인해 주실 수 있나요?",
+          "alt_en": [
+            "Near the window by the coffee table. Do you have CCTV footage you could check?",
+            "By the coffee table near the window — is there security camera footage?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes, we have security cameras. I'll ask our security team to review the footage. Can I have your room number and phone number?",
+          "ko": "네, 보안 카메라가 있어요. 보안팀에 영상 확인을 요청할게요. 객실 번호와 연락처를 알려주실 수 있나요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I've lost my phone.",
+        "It's a black iPhone with a blue case.",
+        "Is there CCTV?"
+      ],
+      "common_mistakes_ko": [
+        "'I think leave it'은 시제가 틀렸습니다. 'I think I left it'이어야 합니다.",
+        "물건 묘사 시 'It has blue case'보다 'It has a blue case' 또는 'with a blue case'가 맞습니다."
+      ],
+      "cultural_note_ko": "핸드폰 분실 시 Find My iPhone(애플) 또는 Find My Device(구글)로 위치를 추적할 수 있습니다. 분실 즉시 핀/비밀번호를 원격으로 활성화하세요."
+    },
+    {
+      "id": "P1-EMRG-004",
+      "title_ko": "경찰에 교통사고 신고",
+      "context_ko": "주차장에서 차가 긁혀 경찰에 신고해야 하는 상황이다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Police Officer",
+      "learner_role": "Victim",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s-40s",
+        "register": "official-professional"
+      },
+      "voice_hint": "authoritative but calm",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good afternoon. I'm Officer Martinez. You called about a vehicle incident?",
+          "ko": "안녕하세요. 저는 마르티네스 경관입니다. 차량 사고 관련해서 신고하셨나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, officer. Someone hit my car in parking lot and run away.",
+          "ko": "네, 경관님. 누군가 주차장에서 제 차를 들이받고 도망갔어요.",
+          "alt_en": [
+            "Yes, someone hit my car in the parking lot and drove away.",
+            "My car was hit in the parking lot and the driver fled."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I see — a hit and run. Did you see the other vehicle or the driver?",
+          "ko": "알겠어요 — 뺑소니군요. 다른 차량이나 운전자를 보셨나요?",
+          "recast_target": "hit my car and run away",
+          "recast_note": "'hit and run' / 'fled the scene'으로 자연스러운 표현 간접 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I not see driver. But I see the car — white SUV. Maybe blue license plate.",
+          "ko": "운전자는 못 봤어요. 근데 차는 봤어요 — 흰색 SUV요. 파란 번호판인 것 같았어요.",
+          "alt_en": [
+            "I didn't see the driver. But the car was a white SUV with a blue license plate.",
+            "I missed the driver, but it was a white SUV — blue plates."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Good observation. Do you remember any numbers or letters from the plate?",
+          "ko": "잘 보셨네요. 번호판에서 숫자나 문자를 기억하시나요?",
+          "recast_target": "I not see driver",
+          "recast_note": "'I didn't see the driver'으로 부정 과거 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Maybe starts with 7 or T. I not sure. Is there camera in parking lot?",
+          "ko": "7이나 T로 시작했던 것 같아요. 확실하지는 않아요. 주차장에 카메라 있나요?",
+          "alt_en": [
+            "I think it started with 7 or T — I'm not sure. Are there cameras in the lot?",
+            "Maybe a 7 or T at the start. I'm not certain. Does the lot have cameras?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "We'll check. I need your insurance information and driver's license for the report. Do you have those with you?",
+          "ko": "확인해 볼게요. 보고서 작성을 위해 보험 정보와 운전면허증이 필요해요. 가지고 계신가요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Someone hit my car and drove away.",
+        "I didn't see the driver.",
+        "Are there cameras?"
+      ],
+      "common_mistakes_ko": [
+        "'I not see'는 'I didn't see'가 맞습니다 — 부정 과거에는 'didn't + 동사원형'을 씁니다.",
+        "차량 추돌 후 도주는 'hit and run' 또는 'fled the scene'이라고 합니다."
+      ],
+      "cultural_note_ko": "미국에서 교통사고 시 반드시 경찰에 신고하고, 상대방 보험 정보를 받아야 합니다. 뺑소니는 형사 범죄입니다."
+    },
+    {
+      "id": "P1-EMRG-005",
+      "title_ko": "병원 응급실 방문",
+      "context_ko": "여행 중 발목을 삐어 응급실에 방문한다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "ER Triage Nurse",
+      "learner_role": "Patient",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s-40s",
+        "register": "professional-efficient"
+      },
+      "voice_hint": "calm and clinical",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello, I'm Nurse Kim. What brings you to the ER today?",
+          "ko": "안녕하세요, 저는 김 간호사예요. 오늘 응급실에 오신 이유가 무엇인가요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I hurt my ankle. I fall down stairs one hour ago. It very painful and swollen.",
+          "ko": "발목을 다쳤어요. 한 시간 전에 계단에서 넘어졌어요. 많이 아프고 부었어요.",
+          "alt_en": [
+            "I hurt my ankle. I fell down the stairs an hour ago. It's very painful and swollen.",
+            "I twisted my ankle falling down stairs. It hurts a lot and it's swollen."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "I'm sorry to hear that. Can you walk on it, or is it too painful?",
+          "ko": "그러셨군요. 걸을 수 있나요, 아니면 너무 아파요?",
+          "recast_target": "I fall down stairs / It very painful",
+          "recast_note": "'I fell down the stairs' / 'It's very painful' — 과거형, be동사 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I can walk, but it hurt a lot. I think maybe broken.",
+          "ko": "걸을 수는 있는데 많이 아파요. 부러진 것 같기도 해요.",
+          "alt_en": [
+            "I can walk, but it hurts a lot. I'm worried it might be broken.",
+            "Walking is possible but very painful. I think it could be fractured."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "We'll need to take an X-ray to check. Do you have travel insurance or health insurance?",
+          "ko": "X레이를 찍어서 확인해야 해요. 여행자 보험이나 의료 보험이 있으신가요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "I have travel insurance from Korea. But I don't know how to use here.",
+          "ko": "한국 여행자 보험이 있어요. 근데 여기서 어떻게 쓰는지 몰라요.",
+          "alt_en": [
+            "I have travel insurance from Korea, but I'm not sure how to use it here.",
+            "I do have Korean travel insurance — I just don't know how it works in the US."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "That's fine — we treat first and sort out insurance later. We'll give you a detailed receipt so you can file a claim. Let me register you now.",
+          "ko": "괜찮아요 — 치료 먼저 하고 보험은 나중에 처리해도 돼요. 청구할 수 있도록 자세한 영수증을 드릴게요. 지금 등록할게요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I hurt my ankle.",
+        "I fell down the stairs.",
+        "I have travel insurance."
+      ],
+      "common_mistakes_ko": [
+        "'I fall down'은 과거 사건이므로 'I fell down'이 맞습니다.",
+        "'It very painful'은 'It's very painful' — be 동사를 빠뜨리지 마세요."
+      ],
+      "cultural_note_ko": "미국 병원은 의료비가 매우 비쌉니다. 해외 여행 시 반드시 여행자 보험에 가입하고, 청구용 영수증(itemized receipt)을 요청하세요."
+    },
+    {
+      "id": "P1-HSPT-001",
+      "title_ko": "의사 예약 잡기",
+      "context_ko": "감기 증상으로 동네 병원 예약을 전화로 잡는다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Medical Receptionist",
+      "learner_role": "Patient",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s",
+        "register": "professional-efficient"
+      },
+      "voice_hint": "brisk but polite",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good morning, City Clinic. How can I help you?",
+          "ko": "좋은 아침이에요, 시티 클리닉입니다. 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. I want to make appointment with doctor. I have cold and sore throat.",
+          "ko": "안녕하세요. 의사 예약을 하고 싶어요. 감기와 목 아픔이 있어요.",
+          "alt_en": [
+            "I'd like to make an appointment. I have a cold and a sore throat.",
+            "Can I schedule an appointment? I have a cold and my throat is sore."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course. Are you a new patient or an existing patient?",
+          "ko": "물론이죠. 신규 환자이신가요, 기존 환자이신가요?",
+          "recast_target": "I want to make appointment / I have cold",
+          "recast_note": "'I'd like to make an appointment' / 'I have a cold' — 관사 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "I am new patient. I am visitor from Korea.",
+          "ko": "신규 환자예요. 한국에서 온 방문자예요.",
+          "alt_en": [
+            "I'm a new patient. I'm visiting from Korea.",
+            "New patient. I'm here as a visitor from Korea."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Understood. We have an opening at 2 PM today or 10 AM tomorrow. Which works better for you?",
+          "ko": "알겠어요. 오늘 오후 2시 또는 내일 오전 10시에 예약 가능해요. 어느 쪽이 더 좋으세요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Today 2 PM is good. What should I bring?",
+          "ko": "오늘 2시가 좋아요. 뭘 가져가야 하나요?",
+          "alt_en": [
+            "Today at 2 PM works. What do I need to bring?",
+            "I'll take the 2 PM today. What should I bring with me?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Please bring your passport, travel insurance card, and a payment method. We'll send a reminder text to your phone.",
+          "ko": "여권, 여행자 보험 카드, 결제 수단을 가져오세요. 핸드폰으로 예약 확인 문자를 보내드릴게요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'd like to make an appointment.",
+        "I have a sore throat.",
+        "What do I need to bring?"
+      ],
+      "common_mistakes_ko": [
+        "'I have cold'가 아니라 'I have a cold' — 감기는 반드시 관사 'a'와 함께 씁니다.",
+        "'make appointment'가 아니라 'make an appointment' — 부정관사 'an' 필요."
+      ],
+      "cultural_note_ko": "미국 의원에서는 예약(appointment)이 필수입니다. 방문 당일 예약이 어려울 수 있으므로 증상 초기에 연락하는 것이 좋습니다."
+    },
+    {
+      "id": "P1-HSPT-002",
+      "title_ko": "진료실에서 증상 설명하기",
+      "context_ko": "병원 진료실에서 의사에게 두통과 발열 증상을 설명한다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Doctor",
+      "learner_role": "Patient",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "40s-50s",
+        "register": "professional-caring"
+      },
+      "voice_hint": "calm and thorough",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! I'm Dr. Smith. What brings you in today?",
+          "ko": "안녕하세요! 저는 스미스 박사입니다. 오늘 어떤 증상으로 오셨나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello, doctor. I have headache and little fever since two days.",
+          "ko": "안녕하세요, 선생님. 이틀 전부터 두통이랑 미열이 있어요.",
+          "alt_en": [
+            "I've had a headache and a slight fever for two days.",
+            "I've been having headaches and a low-grade fever for two days."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Two days — that's good you came in. On a scale of 1 to 10, how would you rate your headache?",
+          "ko": "이틀 됐군요 — 잘 오셨어요. 두통을 1에서 10점으로 표현하면 어느 정도인가요?",
+          "recast_target": "since two days",
+          "recast_note": "'for two days'가 올바른 기간 표현임을 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Maybe seven. It is very strong. Also my neck feel stiff.",
+          "ko": "한 7점 정도요. 아주 심해요. 목도 뻣뻣한 느낌이에요.",
+          "alt_en": [
+            "About a seven. It's quite severe. Also, my neck feels stiff.",
+            "Seven out of ten. Very strong. And my neck is stiff too."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Stiff neck and headache together can be serious. Let me examine you. Have you been around anyone who was sick recently?",
+          "ko": "목 뻣뻣함과 두통이 동시에 오면 심각할 수 있어요. 진찰해 볼게요. 최근에 아픈 사람 근처에 있었나요?",
+          "recast_target": "my neck feel stiff",
+          "recast_note": "'my neck feels stiff'로 3인칭 단수 동사 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Yes, my friend had flu last week. Do I have flu also?",
+          "ko": "네, 지난주에 친구가 독감에 걸렸어요. 저도 독감에 걸린 건가요?",
+          "alt_en": [
+            "Yes, my friend had the flu last week. Do you think I have the flu too?",
+            "My friend had flu last week. Could I have caught it?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "It's possible. I'll run a flu test and check your temperature. Try to relax — we'll know more in a few minutes.",
+          "ko": "그럴 수 있어요. 독감 검사를 하고 체온을 확인해 볼게요. 편히 계세요 — 몇 분 안에 더 알 수 있을 거예요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I've had a headache for two days.",
+        "My neck feels stiff.",
+        "Do I have the flu?"
+      ],
+      "common_mistakes_ko": [
+        "기간 표현: 'since two days'가 아닌 'for two days' — since는 특정 시점, for는 기간과 함께 씁니다.",
+        "'feel stiff'는 3인칭일 때 'feels stiff'가 맞습니다."
+      ],
+      "cultural_note_ko": "미국 병원에서는 증상을 1-10점으로 표현하도록 자주 요청합니다. 목 뻣뻣함과 두통의 동시 발현은 수막염 가능성이 있어 즉각적인 검사가 필요합니다."
+    },
+    {
+      "id": "P1-HSPT-003",
+      "title_ko": "약국에서 처방전 제출하기",
+      "context_ko": "병원에서 받은 처방전을 약국에 제출하고 약을 수령한다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Pharmacist",
+      "learner_role": "Patient",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s-40s",
+        "register": "professional-helpful"
+      },
+      "voice_hint": "knowledgeable and clear",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hello! How can I help you?",
+          "ko": "안녕하세요! 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "I have prescription from doctor. I need to get medicine.",
+          "ko": "의사에게서 처방전을 받았어요. 약을 받으러 왔어요.",
+          "alt_en": [
+            "I have a prescription to fill.",
+            "I'd like to get this prescription filled, please."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course. Can I have your prescription and your insurance card?",
+          "ko": "물론이죠. 처방전과 보험카드를 주시겠어요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Here prescription. I don't have insurance here. I am tourist from Korea.",
+          "ko": "처방전 여기 있어요. 여기 보험은 없어요. 한국에서 온 관광객이에요.",
+          "alt_en": [
+            "Here's the prescription. I don't have US insurance — I'm a tourist from Korea.",
+            "Here it is. I'm visiting from Korea, so I don't have insurance here."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "No problem. Without insurance, you'll pay the full price. This medication costs forty-two dollars. Is that okay?",
+          "ko": "문제없어요. 보험 없이는 전액 지불하셔야 해요. 이 약은 42달러예요. 괜찮으세요?",
+          "recast_target": "Here prescription",
+          "recast_note": "'Here's the prescription'으로 자연스러운 제시 표현 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay. How many pill in bottle? And how to take?",
+          "ko": "알겠어요. 병에 알약이 몇 개 있나요? 그리고 어떻게 복용하나요?",
+          "alt_en": [
+            "How many pills are in the bottle? And how should I take them?",
+            "How many pills is this? And what's the dosage?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Thirty pills — one pill twice a day, morning and evening, with food. Do not take on an empty stomach. Any questions?",
+          "ko": "30알이에요 — 아침저녁으로 하루 두 번, 식사와 함께 드세요. 공복에 드시면 안 돼요. 다른 질문 있으세요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I have a prescription to fill.",
+        "How should I take this?",
+        "How many pills are in the bottle?"
+      ],
+      "common_mistakes_ko": [
+        "'Here prescription'은 'Here is my prescription' 또는 'Here's the prescription'이 맞습니다.",
+        "'How to take'는 질문이 아니라 명사구입니다. 'How should I take it?'이 올바른 질문 형태입니다."
+      ],
+      "cultural_note_ko": "미국에서 처방전 없이는 항생제 등 전문약을 구입할 수 없습니다. 한국에서의 처방전은 미국에서 사용 불가하므로 현지 의사에게 새 처방전을 받아야 합니다."
+    },
+    {
+      "id": "P1-HSPT-004",
+      "title_ko": "치과에서 예약 없이 방문",
+      "context_ko": "치통이 심해 예약 없이 치과를 방문한다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Dental Receptionist",
+      "learner_role": "Patient",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "20s-30s",
+        "register": "professional-helpful"
+      },
+      "voice_hint": "sympathetic",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good afternoon, Bright Smile Dental. How can I help you?",
+          "ko": "안녕하세요, 브라이트 스마일 치과입니다. 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. I have very bad toothache. I come without appointment. Is it possible to see dentist today?",
+          "ko": "안녕하세요. 치통이 너무 심해요. 예약 없이 왔어요. 오늘 치과의사를 볼 수 있을까요?",
+          "alt_en": [
+            "Hi, I have a severe toothache. Can I see a dentist today without an appointment?",
+            "I'm in a lot of pain with a toothache. Is there any chance of being seen today?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Oh, I'm sorry to hear that. We normally require an appointment, but for dental emergencies we try to accommodate. Can you describe the pain?",
+          "ko": "아, 그러셨군요. 보통은 예약이 필요하지만, 치과 응급 상황은 최대한 수용하려 해요. 통증이 어떤지 설명해 주실 수 있나요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "It is very sharp pain when I eat or drink cold thing. Since yesterday.",
+          "ko": "차가운 걸 먹거나 마실 때 아주 날카로운 통증이에요. 어제부터요.",
+          "alt_en": [
+            "It's a sharp pain when I eat or drink anything cold. It started yesterday.",
+            "Sharp pain when eating or drinking cold things, since yesterday."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "That sounds like it could be a sensitive tooth or a cavity. Let me check with the dentist. Can you wait about 45 minutes?",
+          "ko": "치아 과민증이나 충치일 수 있어요. 치과의사에게 확인해 볼게요. 약 45분 기다리실 수 있나요?",
+          "recast_target": "when I eat or drink cold thing",
+          "recast_note": "'when I eat or drink cold things'으로 복수형 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Yes, I can wait. Is treatment expensive without insurance?",
+          "ko": "네, 기다릴 수 있어요. 보험 없이는 치료가 비싼가요?",
+          "alt_en": [
+            "Yes, I'll wait. How much would treatment cost without insurance?",
+            "I can wait. What's the approximate cost without insurance?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "It depends on the treatment. Just the exam is ninety dollars. If you need a filling, it's around one-fifty more. We can discuss options after the exam.",
+          "ko": "치료에 따라 다르지만 진찰만 해도 90달러예요. 충전이 필요하면 추가로 약 150달러 정도예요. 진찰 후 옵션을 논의할 수 있어요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I have a severe toothache.",
+        "Is it possible to see a dentist today?",
+        "How much would it cost?"
+      ],
+      "common_mistakes_ko": [
+        "'cold thing'보다 'cold things' 또는 'anything cold'이 더 자연스럽습니다.",
+        "'I come without appointment'보다 'I don't have an appointment'이 더 명확합니다."
+      ],
+      "cultural_note_ko": "미국 치과는 기본 검사만 해도 비용이 상당합니다. 여행자 보험이 치과 응급 처치를 포함하는지 미리 확인하세요."
+    },
+    {
+      "id": "P1-HSPT-005",
+      "title_ko": "검사 결과 확인하기",
+      "context_ko": "혈액 검사 결과를 확인하기 위해 전화로 병원에 연락한다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Nurse",
+      "learner_role": "Patient",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s",
+        "register": "professional"
+      },
+      "voice_hint": "efficient and professional",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "City Medical Center, nurse's station. How can I help?",
+          "ko": "시티 메디컬 센터, 간호 스테이션입니다. 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. I am patient of Dr. Lee. I want to know my blood test result.",
+          "ko": "안녕하세요. 이 박사님 환자예요. 혈액 검사 결과를 알고 싶어요.",
+          "alt_en": [
+            "Hi, I'm a patient of Dr. Lee's. I'm calling about my blood test results.",
+            "Hello, I'd like to check my blood test results. I'm Dr. Lee's patient."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Of course. Can I have your full name and date of birth to verify your identity?",
+          "ko": "물론이죠. 신원 확인을 위해 성함과 생년월일을 알려주시겠어요?",
+          "recast_target": "I am patient of Dr. Lee",
+          "recast_note": "'I'm a patient of Dr. Lee's'로 소유격 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "My name is Choi Minyoung. Birthday is March 15, 1990.",
+          "ko": "제 이름은 최민영이에요. 생일은 1990년 3월 15일이에요.",
+          "alt_en": [
+            "Choi Minyoung. Date of birth is March 15th, 1990.",
+            "I'm Choi Minyoung, born March 15, 1990."
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Thank you, Ms. Choi. I found your file. Your blood test results came in — most things are normal. But your iron level is a little low.",
+          "ko": "감사합니다, 최 고객님. 파일을 찾았어요. 혈액 검사 결과가 나왔어요 — 대부분은 정상이에요. 하지만 철분 수치가 약간 낮아요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Iron level low? What does it mean? Is serious?",
+          "ko": "철분 수치가 낮다고요? 그게 무슨 의미예요? 심각한 건가요?",
+          "alt_en": [
+            "Low iron? What does that mean? Is it serious?",
+            "Is low iron serious? What should I do?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "It means you may have mild anemia. Dr. Lee would like to discuss this with you in person. Can we schedule a follow-up appointment?",
+          "ko": "경미한 빈혈이 있을 수 있다는 의미예요. 이 박사님이 직접 상담을 원하세요. 후속 예약을 잡을까요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'm calling about my blood test results.",
+        "What does that mean?",
+        "Is it serious?"
+      ],
+      "common_mistakes_ko": [
+        "'I am patient of Dr. Lee'는 'I'm a patient of Dr. Lee's'가 맞습니다 — 관사 'a'와 소유격 's' 필요.",
+        "'Is serious?'가 아니라 'Is it serious?' — 주어 'it'이 필요합니다."
+      ],
+      "cultural_note_ko": "미국 병원에서는 전화로 검사 결과를 물어볼 때 신원 확인(이름, 생년월일)이 필수입니다. HIPAA 법에 따라 환자 정보는 엄격히 보호됩니다."
+    },
+    {
+      "id": "P1-DIRE-001",
+      "title_ko": "거리에서 목적지 가는 길 묻기",
+      "context_ko": "뉴욕 거리에서 지나가는 행인에게 박물관 가는 방법을 묻는다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Local Passerby",
+      "learner_role": "Tourist",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s",
+        "register": "casual-helpful"
+      },
+      "voice_hint": "New York accent, friendly",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "Learner",
+          "en": "Excuse me. Can you help me?",
+          "ko": "실례합니다. 도와주실 수 있나요?",
+          "alt_en": [
+            "Excuse me, do you have a moment?",
+            "Sorry to bother you, can I ask for directions?"
+          ]
+        },
+        {
+          "turn": 2,
+          "speaker": "AI",
+          "en": "Sure! What do you need?",
+          "ko": "물론이죠! 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 3,
+          "speaker": "Learner",
+          "en": "How to go to Metropolitan Museum? I walk or need bus?",
+          "ko": "메트로폴리탄 박물관에 어떻게 가나요? 걸어갈 수 있나요, 아니면 버스를 타야 하나요?",
+          "alt_en": [
+            "How do I get to the Metropolitan Museum? Can I walk there?",
+            "Is the Metropolitan Museum within walking distance?"
+          ]
+        },
+        {
+          "turn": 4,
+          "speaker": "AI",
+          "en": "Oh, the Met! It's on 5th Avenue at 82nd Street. You're about 15 blocks away — I'd take the M1 bus, it stops right in front.",
+          "ko": "오, 메트! 82번 스트리트의 5번 애비뉴에 있어요. 여기서 약 15블록이에요 — M1 버스를 타시면 바로 앞에 서요.",
+          "recast_target": "How to go to",
+          "recast_note": "'How do I get to'로 올바른 의문문 어순 자연스럽게 모델링"
+        },
+        {
+          "turn": 5,
+          "speaker": "Learner",
+          "en": "M1 bus. Where is bus stop?",
+          "ko": "M1 버스요. 버스 정류장이 어디에 있나요?",
+          "alt_en": [
+            "Where's the M1 bus stop?",
+            "Where can I catch the M1?"
+          ]
+        },
+        {
+          "turn": 6,
+          "speaker": "AI",
+          "en": "Walk one block north on this street and turn right. The bus stop is right there on the corner. You'll see the sign.",
+          "ko": "이 길을 따라 한 블록 북쪽으로 걸어가서 오른쪽으로 도세요. 버스 정류장이 바로 모퉁이에 있어요. 표지판이 보일 거예요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 7,
+          "speaker": "Learner",
+          "en": "One block north and turn right. I understand. Thank you so much!",
+          "ko": "한 블록 북쪽으로 가서 오른쪽이요. 알겠어요. 정말 감사합니다!",
+          "alt_en": [
+            "Got it! One block north, then right. Thank you!",
+            "North one block, right at the corner — perfect, thanks!"
+          ]
+        }
+      ],
+      "key_expressions": [
+        "How do I get to ~?",
+        "Is it within walking distance?",
+        "Walk one block and turn right."
+      ],
+      "common_mistakes_ko": [
+        "'How to go to'는 명사구입니다. 길 안내를 부탁할 때는 'How do I get to ~?'를 씁니다.",
+        "방향을 확인할 때 들은 내용을 반복하면('One block north, then right?') 오해를 줄일 수 있습니다."
+      ],
+      "cultural_note_ko": "뉴욕에서 길을 물을 때 'blocks'(블록) 단위로 거리를 안내하는 것이 일반적입니다. 1블록은 약 80-100미터입니다."
+    },
+    {
+      "id": "P1-DIRE-002",
+      "title_ko": "쇼핑몰 안에서 매장 찾기",
+      "context_ko": "대형 쇼핑몰에서 인포메이션 데스크에 특정 매장 위치를 묻는다.",
+      "level": "A2",
+      "outcome": "success",
+      "ai_role": "Mall Information Staff",
+      "learner_role": "Shopper",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "20s",
+        "register": "helpful"
+      },
+      "voice_hint": "friendly and informative",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Hi there! Welcome to Westfield Mall. Can I help you?",
+          "ko": "안녕하세요! 웨스트필드 쇼핑몰에 오신 걸 환영해요. 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. I looking for Apple Store. I don't know where it is.",
+          "ko": "네. 애플 스토어를 찾고 있어요. 어디 있는지 모르겠어요.",
+          "alt_en": [
+            "I'm looking for the Apple Store. Can you tell me where it is?",
+            "Where is the Apple Store in this mall?"
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "The Apple Store is on the second floor, near the food court entrance. Take the escalator up and it's on your right.",
+          "ko": "애플 스토어는 2층 푸드코트 입구 근처에 있어요. 에스컬레이터를 타고 올라가면 오른쪽에 있어요.",
+          "recast_target": "I looking for",
+          "recast_note": "'I'm looking for'로 현재진행형 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Second floor, right side. What time Apple Store close today?",
+          "ko": "2층, 오른쪽이요. 오늘 애플 스토어 몇 시에 닫나요?",
+          "alt_en": [
+            "Second floor on the right — got it. What time does the Apple Store close today?",
+            "And what are the Apple Store's hours today?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "The Apple Store closes at 9 PM today with the rest of the mall. Is there anything else I can help you with?",
+          "ko": "애플 스토어는 오늘 오후 9시에 쇼핑몰과 함께 닫아요. 다른 도움이 필요하신가요?",
+          "recast_target": "What time Apple Store close",
+          "recast_note": "'What time does the Apple Store close?'로 의문문 조동사 does 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Yes. Is there pharmacy in this mall?",
+          "ko": "네. 이 쇼핑몰에 약국이 있나요?",
+          "alt_en": [
+            "Is there a pharmacy in this mall?",
+            "Does this mall have a pharmacy?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes! There's a CVS pharmacy on the ground floor, near the main entrance. It's open until 10 PM.",
+          "ko": "네! 1층 정문 근처에 CVS 약국이 있어요. 오후 10시까지 열어요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "I'm looking for the ~.",
+        "What time does it close?",
+        "Is there a ~ in this mall?"
+      ],
+      "common_mistakes_ko": [
+        "'I looking for'는 'I'm looking for' — be 동사 'm'을 빠뜨리지 않도록 주의하세요.",
+        "'What time ~ close?'가 아니라 'What time does ~ close?' — 의문문에 does 필요."
+      ],
+      "cultural_note_ko": "미국 대형 쇼핑몰에는 인포메이션 데스크가 있어 매장 위치, 이벤트 정보 등을 안내받을 수 있습니다. 몰 앱에서도 매장 지도를 확인할 수 있습니다."
+    },
+    {
+      "id": "P1-DIRE-003",
+      "title_ko": "박물관에서 특정 전시관 찾기",
+      "context_ko": "박물관에서 공룡 전시관 위치를 안내 직원에게 묻는다.",
+      "level": "A2",
+      "outcome": "partial",
+      "ai_role": "Museum Guide",
+      "learner_role": "Visitor",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "40s",
+        "register": "educational-friendly"
+      },
+      "voice_hint": "enthusiastic and clear",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Welcome to the Natural History Museum! Do you need any help?",
+          "ko": "자연사 박물관에 오신 걸 환영합니다! 도움이 필요하신가요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes, please. Where is dinosaur exhibition? I bring my children.",
+          "ko": "네, 부탁드려요. 공룡 전시관이 어디에 있나요? 아이들을 데리고 왔어요.",
+          "alt_en": [
+            "Where is the dinosaur exhibition? I'm here with my children.",
+            "Can you tell me where the dinosaur exhibit is? I've brought my kids."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "How exciting! The dinosaur hall is on the fourth floor. Take the elevator — it's easier with children. Turn left when you exit.",
+          "ko": "정말 신나겠네요! 공룡 전시관은 4층에 있어요. 아이들이 있으면 엘리베이터가 편해요. 나오실 때 왼쪽으로 도세요.",
+          "recast_target": "Where is dinosaur exhibition",
+          "recast_note": "'Where is the dinosaur exhibition?' — 특정 장소에 관사 'the' 필요"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Fourth floor, turn left from elevator. How long is exhibition?",
+          "ko": "4층, 엘리베이터에서 왼쪽이요. 전시가 얼마나 걸리나요?",
+          "alt_en": [
+            "Fourth floor, left from the elevator. How long does the exhibition take?",
+            "Got it — fourth floor. How much time should we allow?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Most families spend about one to two hours in the dinosaur hall. There's also a special kids activity area nearby.",
+          "ko": "대부분의 가족이 공룡 전시관에서 약 1-2시간을 보내요. 근처에 어린이 특별 활동 공간도 있어요.",
+          "recast_target": "How long is exhibition",
+          "recast_note": "'How long does the exhibition take?' 또는 'How much time should we allow?' 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Oh nice! Is there cafe or restaurant for lunch in museum?",
+          "ko": "아 좋아요! 박물관에 점심 먹을 수 있는 카페나 레스토랑이 있나요?",
+          "alt_en": [
+            "Is there a café or restaurant in the museum for lunch?",
+            "Do you have a café where we could have lunch?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes! There's a café on the second floor and a full restaurant on the main floor. The café has great kid-friendly options.",
+          "ko": "네! 2층에 카페가 있고 1층에 레스토랑이 있어요. 카페에는 아이들에게 좋은 메뉴도 있어요.",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Where is the dinosaur exhibition?",
+        "How long does it take?",
+        "Is there a café?"
+      ],
+      "common_mistakes_ko": [
+        "특정 장소를 물을 때 관사 'the'를 빠뜨리지 않도록 주의하세요: 'the dinosaur exhibition'.",
+        "'How long is exhibition?'보다 'How long does the exhibition take?'이 더 자연스럽습니다."
+      ],
+      "cultural_note_ko": "미국 박물관은 대부분 오디오 가이드를 제공합니다. 가족 방문 시 어린이 활동 공간과 특별 프로그램을 미리 확인하면 좋습니다."
+    },
+    {
+      "id": "P1-DIRE-004",
+      "title_ko": "공항에서 수하물 찾는 곳 묻기",
+      "context_ko": "공항 도착 후 수하물 찾는 곳을 직원에게 묻는다.",
+      "level": "A2",
+      "outcome": "redirect",
+      "ai_role": "Airport Staff",
+      "learner_role": "Arriving Passenger",
+      "ai_persona": {
+        "gender": "male",
+        "age_range": "30s-40s",
+        "register": "efficient-helpful"
+      },
+      "voice_hint": "clear and direct",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Welcome! Can I help you with anything?",
+          "ko": "어서 오세요! 도움이 필요하신가요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Yes. Where is baggage claim? I just arrive from Korea.",
+          "ko": "네. 수하물 찾는 곳이 어디에 있나요? 한국에서 막 도착했어요.",
+          "alt_en": [
+            "Where is baggage claim? I just arrived from Korea.",
+            "Can you direct me to baggage claim? I just flew in from Korea."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Welcome to the US! Baggage claim is on the lower level. Take the escalator down and follow the signs.",
+          "ko": "미국에 오신 걸 환영해요! 수하물 찾는 곳은 아래층이에요. 에스컬레이터를 타고 내려가서 표지판을 따라가세요.",
+          "recast_target": "I just arrive",
+          "recast_note": "'I just arrived' — 완료된 과거는 단순 과거시제로 자연스럽게 모델링"
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Thank you. Also, where is immigration and customs? I don't see sign.",
+          "ko": "감사해요. 그리고 입국심사와 세관은 어디에 있나요? 표지판이 안 보여요.",
+          "alt_en": [
+            "And where are immigration and customs? I can't find the signs.",
+            "Can you also point me to immigration and customs?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Oh — if you just arrived internationally, you need to go through immigration first, before baggage claim. Go back to the arrivals area — follow the red signs.",
+          "ko": "아 — 국제선으로 도착하셨다면, 수하물 찾기 전에 먼저 입국심사를 받으셔야 해요. 도착 구역으로 돌아가세요 — 빨간 표지판을 따라가세요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Oh, I make mistake! I must go back. Which way is immigration?",
+          "ko": "아, 제가 실수했네요! 돌아가야겠어요. 입국심사가 어느 방향이에요?",
+          "alt_en": [
+            "Oh, I went the wrong way! Which direction is immigration?",
+            "I see — I need to go back. Where do I go for immigration?"
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Go straight, then turn left at the big blue sign. You'll see the immigration hall. Go quickly — long lines sometimes!",
+          "ko": "직진하다가 큰 파란 표지판에서 왼쪽으로 도세요. 입국심사 홀이 보일 거예요. 빨리 가세요 — 줄이 길 때도 있어요!",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Where is baggage claim?",
+        "I just arrived from ~.",
+        "Which direction is immigration?"
+      ],
+      "common_mistakes_ko": [
+        "'I just arrive'는 'I just arrived' — 방금 완료된 일은 단순 과거 또는 현재완료를 씁니다.",
+        "국제선 도착 시 수하물 찾기 전에 반드시 입국심사(immigration)와 세관(customs)을 거쳐야 합니다."
+      ],
+      "cultural_note_ko": "미국 공항 입국 절차: 입국심사(immigration) → 수하물 찾기(baggage claim) → 세관(customs) 순입니다. 처음 방문자는 Electronic System for Travel Authorization(ESTA) 승인이 필요합니다."
+    },
+    {
+      "id": "P1-DIRE-005",
+      "title_ko": "호텔에서 근처 식당 추천 받기",
+      "context_ko": "호텔 컨시어지에게 근처 좋은 이탈리안 레스토랑을 추천받는다.",
+      "level": "A2",
+      "outcome": "abandon",
+      "ai_role": "Hotel Concierge",
+      "learner_role": "Hotel Guest",
+      "ai_persona": {
+        "gender": "female",
+        "age_range": "30s",
+        "register": "knowledgeable-warm"
+      },
+      "voice_hint": "enthusiastic and helpful",
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "AI",
+          "en": "Good evening! How can I help you?",
+          "ko": "좋은 저녁이에요! 어떻게 도와드릴까요?",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 2,
+          "speaker": "Learner",
+          "en": "Hello. Can you recommend restaurant near here? I want Italian food.",
+          "ko": "안녕하세요. 근처 식당을 추천해 주실 수 있나요? 이탈리안 음식을 먹고 싶어요.",
+          "alt_en": [
+            "Can you recommend a good Italian restaurant nearby?",
+            "I'm looking for a good Italian restaurant close to here."
+          ]
+        },
+        {
+          "turn": 3,
+          "speaker": "AI",
+          "en": "Absolutely! There are two great Italian places nearby. Trattoria Bella is five minutes on foot — very authentic, medium price. Ristorante Marco is a bit farther but more upscale.",
+          "ko": "물론이죠! 근처에 두 곳의 멋진 이탈리안 레스토랑이 있어요. 트라토리아 벨라는 걸어서 5분이에요 — 매우 정통적이고 중간 가격대예요. 리스토란테 마르코는 조금 더 멀지만 더 고급스러워요.",
+          "recast_target": null,
+          "recast_note": null
+        },
+        {
+          "turn": 4,
+          "speaker": "Learner",
+          "en": "Trattoria Bella sounds good. How to get there?",
+          "ko": "트라토리아 벨라가 좋을 것 같아요. 거기 어떻게 가나요?",
+          "alt_en": [
+            "Trattoria Bella sounds great. How do I get there?",
+            "I'll try Trattoria Bella. Can you tell me how to get there?"
+          ]
+        },
+        {
+          "turn": 5,
+          "speaker": "AI",
+          "en": "Exit the hotel and turn right. Walk two blocks down 5th Street. You'll see it on the left — red awning, can't miss it.",
+          "ko": "호텔에서 나와 오른쪽으로 도세요. 5번 스트리트를 따라 두 블록 내려가세요. 왼쪽에 빨간 차양막이 있어요 — 바로 보일 거예요.",
+          "recast_target": "How to get there",
+          "recast_note": "'How do I get there?'으로 의문문 어순 자연스럽게 모델링"
+        },
+        {
+          "turn": 6,
+          "speaker": "Learner",
+          "en": "Okay. Should I make reservation? It is Friday night.",
+          "ko": "알겠어요. 예약을 해야 하나요? 금요일 밤이잖아요.",
+          "alt_en": [
+            "Should I make a reservation? It's Friday night.",
+            "Do I need a reservation? It's a Friday."
+          ]
+        },
+        {
+          "turn": 7,
+          "speaker": "AI",
+          "en": "Yes, definitely! Friday nights are very busy. Would you like me to call and make a reservation for you? What time and how many people?",
+          "ko": "네, 꼭 하세요! 금요일 밤은 정말 바빠요. 제가 전화해서 예약해 드릴까요? 몇 시에 몇 명이세요?",
+          "recast_target": null,
+          "recast_note": null
+        }
+      ],
+      "key_expressions": [
+        "Can you recommend a good ~ restaurant nearby?",
+        "How do I get there?",
+        "Should I make a reservation?"
+      ],
+      "common_mistakes_ko": [
+        "'How to get there'는 명사구입니다. 'How do I get there?'이 올바른 의문문입니다.",
+        "예약할 때는 'make a reservation' 또는 'book a table'이라고 합니다."
+      ],
+      "cultural_note_ko": "미국 인기 레스토랑은 주말 저녁에 예약 없이 방문하면 1-2시간 대기가 발생할 수 있습니다. Open Table 앱으로 온라인 예약도 가능합니다."
+    }
+  ]
+}
