@@ -100,10 +100,17 @@ app.post('/api/tts', async (req, res) => {
     await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3)
     const { audioStream } = tts.toStream(text)
 
-    res.setHeader('Content-Type', 'audio/mpeg')
-    res.setHeader('Cache-Control', 'public, max-age=86400')
-    audioStream.pipe(res)
-
+    // pipe 직접 전송 → 로봇음 원인
+    // 전체 버퍼 수집 후 한 번에 전송 (Content-Length 포함)
+    const chunks = []
+    audioStream.on('data', chunk => chunks.push(chunk))
+    audioStream.on('end', () => {
+      const audioBuffer = Buffer.concat(chunks)
+      res.setHeader('Content-Type', 'audio/mpeg')
+      res.setHeader('Cache-Control', 'public, max-age=86400')
+      res.setHeader('Content-Length', audioBuffer.length)
+      res.send(audioBuffer)
+    })
     audioStream.on('error', (err) => {
       console.error('TTS 스트림 오류:', err.message)
       if (!res.headersSent) res.status(500).json({ error: err.message })

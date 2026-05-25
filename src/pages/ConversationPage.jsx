@@ -58,8 +58,9 @@ export default function ConversationPage() {
       const arrayBuffer = await res.arrayBuffer()
 
       // AudioContext 사용 — Chrome 자동재생 정책 우회
+      // sampleRate 24000 고정: TTS 오디오와 일치시켜 리샘플링 왜곡 방지
       const AudioCtx = window.AudioContext || window.webkitAudioContext
-      const ctx = new AudioCtx()
+      const ctx = new AudioCtx({ sampleRate: 24000 })
       if (ctx.state === 'suspended') await ctx.resume()
 
       const decoded = await ctx.decodeAudioData(arrayBuffer)
